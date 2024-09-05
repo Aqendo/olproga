@@ -1,0 +1,657 @@
+[main] Building folder: untitled all
+[build] Starting build
+[proc] Executing command: /usr/bin/cmake --build /home/ser/CLionProjects/untitled/build --config Debug --target all --
+[build] [2/6  16% :: 4.827] Building CXX object CMakeFiles/untitled.dir/cmake_pch.hxx.gch
+[build] In file included from /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/x86_64-pc-linux-gnu/bits/os_defines.h:39,
+[build]                  from /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/x86_64-pc-linux-gnu/bits/c++config.h:679,
+[build]                  from /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/cassert:43,
+[build]                  from /home/ser/CLionProjects/untitled/bits/stdc++.h:33,
+[build]                  from /home/ser/CLionProjects/untitled/build/CMakeFiles/untitled.dir/cmake_pch.hxx:5,
+[build]                  from <command-line>:
+[build] /usr/include/features.h:414:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
+[build]   414 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
+[build]       |    ^~~~~~~
+[build] [3/6  33% :: 4.850] Building CXX object CMakeFiles/slow.dir/cmake_pch.hxx.gch
+[build] In file included from /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/x86_64-pc-linux-gnu/bits/os_defines.h:39,
+[build]                  from /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/x86_64-pc-linux-gnu/bits/c++config.h:679,
+[build]                  from /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/cassert:43,
+[build]                  from /home/ser/CLionProjects/untitled/bits/stdc++.h:33,
+[build]                  from /home/ser/CLionProjects/untitled/build/CMakeFiles/slow.dir/cmake_pch.hxx:5,
+[build]                  from <command-line>:
+[build] /usr/include/features.h:414:4: warning: #warning _FORTIFY_SOURCE requires compiling with optimization (-O) [-Wcpp]
+[build]   414 | #  warning _FORTIFY_SOURCE requires compiling with optimization (-O)
+[build]       |    ^~~~~~~
+[build] [4/6  50% :: 5.543] Building CXX object CMakeFiles/untitled.dir/main.cpp.o
+[build] [5/6  66% :: 5.659] Linking CXX executable untitled
+[build] [5/6  83% :: 5.991] Building CXX object CMakeFiles/slow.dir/slow.cpp.o
+[build] FAILED: CMakeFiles/slow.dir/slow.cpp.o 
+[build] /usr/bin/g++ -DLOCAL  -ftrapv -ggdb -O0 -D_FORTIFY_SOURCE=2 -g -Winvalid-pch -include /home/ser/CLionProjects/untitled/build/CMakeFiles/slow.dir/cmake_pch.hxx -MD -MT CMakeFiles/slow.dir/slow.cpp.o -MF CMakeFiles/slow.dir/slow.cpp.o.d -o CMakeFiles/slow.dir/slow.cpp.o -c /home/ser/CLionProjects/untitled/slow.cpp
+[build] In file included from /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/hash_policy.hpp:281,
+[build]                  from /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/standard_policies.hpp:45,
+[build]                  from /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/assoc_container.hpp:47,
+[build]                  from /home/ser/CLionProjects/untitled/slow.cpp:10:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/resize_policy/hash_load_check_resize_trigger_imp.hpp: In member function ‘void __gnu_pbds::hash_load_check_resize_trigger<External_Load_Access, Size_Type>::assert_valid(const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/resize_policy/hash_load_check_resize_trigger_imp.hpp:290:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   290 |   PB_DS_DEBUG_VERIFY(m_load_max > m_load_min);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/resize_policy/hash_load_check_resize_trigger_imp.hpp:290:3: note: (if you use ‘-fpermissive’, G++ will accept your code, but allowing the use of an undeclared name is deprecated)
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/resize_policy/hash_load_check_resize_trigger_imp.hpp:291:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   291 |   PB_DS_DEBUG_VERIFY(m_next_grow_size >= m_next_shrink_size);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] In file included from /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/cassert:43,
+[build]                  from /home/ser/CLionProjects/untitled/bits/stdc++.h:33,
+[build]                  from /home/ser/CLionProjects/untitled/build/CMakeFiles/slow.dir/cmake_pch.hxx:5,
+[build]                  from <command-line>:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp: At global scope:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:76:20: error: ‘std’ in namespace ‘std’ does not name a type
+[build]    76 |       typedef std::_GLIBCXX_STD_C::list<Key>            key_repository;
+[build]       |                    ^~~~~~~~~~~~~~
+[build] In file included from /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/list_update_map_/lu_map_.hpp:49,
+[build]                  from /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/container_base_dispatch.hpp:66,
+[build]                  from /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/assoc_container.hpp:48:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:77:24: error: ‘key_repository’ has not been declared
+[build]    77 |       typedef typename key_repository::size_type        size_type;
+[build]       |                        ^~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:78:24: error: ‘key_repository’ has not been declared
+[build]    78 |       typedef typename key_repository::iterator         iterator;
+[build]       |                        ^~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:79:24: error: ‘key_repository’ has not been declared
+[build]    79 |       typedef typename key_repository::const_iterator   const_iterator;
+[build]       |                        ^~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:126:7: error: ‘key_repository’ does not name a type
+[build]   126 |       key_repository    m_keys;
+[build]       |       ^~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp: In copy constructor ‘__gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>::debug_map_base(const __gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>&)’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:138:7: error: class ‘__gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>’ does not have any field named ‘m_keys’
+[build]   138 |     : m_keys(other.m_keys), m_eq(other.m_eq)
+[build]       |       ^~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp: In member function ‘void __gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>::insert_new(key_const_reference)’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:153:26: error: ‘m_keys’ was not declared in this scope; did you mean ‘r_key’?
+[build]   153 |       if (find(r_key) != m_keys.end())
+[build]       |                          ^~~~~~
+[build]       |                          r_key
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:161:11: error: ‘m_keys’ was not declared in this scope; did you mean ‘r_key’?
+[build]   161 |           m_keys.push_back(r_key);
+[build]       |           ^~~~~~
+[build]       |           r_key
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp: In member function ‘void __gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>::erase_existing(key_const_reference)’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:179:17: error: ‘m_keys’ was not declared in this scope; did you mean ‘r_key’?
+[build]   179 |       if (it == m_keys.end())
+[build]       |                 ^~~~~~
+[build]       |                 r_key
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:184:7: error: ‘m_keys’ was not declared in this scope; did you mean ‘r_key’?
+[build]   184 |       m_keys.erase(it);
+[build]       |       ^~~~~~
+[build]       |       r_key
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp: In member function ‘void __gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>::clear()’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:194:7: error: ‘m_keys’ was not declared in this scope
+[build]   194 |       m_keys.clear();
+[build]       |       ^~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp: In member function ‘void __gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>::check_key_exists(key_const_reference, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:205:26: error: ‘m_keys’ was not declared in this scope; did you mean ‘r_key’?
+[build]   205 |       if (find(r_key) == m_keys.end())
+[build]       |                          ^~~~~~
+[build]       |                          r_key
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp: In member function ‘void __gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>::check_key_does_not_exist(key_const_reference, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:220:26: error: ‘m_keys’ was not declared in this scope; did you mean ‘r_key’?
+[build]   220 |       if (find(r_key) != m_keys.end())
+[build]       |                          ^~~~~~
+[build]       |                          r_key
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp: In member function ‘void __gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>::check_size(size_type, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:236:35: error: ‘m_keys’ was not declared in this scope
+[build]   236 |       const size_type keys_size = m_keys.size();
+[build]       |                                   ^~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp: In member function ‘void __gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>::swap(__gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>&)’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:251:7: error: ‘m_keys’ was not declared in this scope
+[build]   251 |       m_keys.swap(other.m_keys);
+[build]       |       ^~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp: In member function ‘__gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>::const_iterator __gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>::find(key_const_reference) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:263:31: error: ‘m_keys’ was not declared in this scope; did you mean ‘r_key’?
+[build]   263 |       for (iterator_type it = m_keys.begin(); it != m_keys.end(); ++it)
+[build]       |                               ^~~~~~
+[build]       |                               r_key
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:264:18: error: invalid type argument of unary ‘*’ (have ‘iterator_type’ {aka ‘int’})
+[build]   264 |         if (m_eq(*it, r_key))
+[build]       |                  ^~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:266:14: error: ‘m_keys’ was not declared in this scope; did you mean ‘r_key’?
+[build]   266 |       return m_keys.end();
+[build]       |              ^~~~~~
+[build]       |              r_key
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp: In member function ‘__gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>::iterator __gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>::find(key_const_reference)’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:275:21: error: ‘m_keys’ was not declared in this scope; did you mean ‘r_key’?
+[build]   275 |       iterator it = m_keys.begin();
+[build]       |                     ^~~~~~
+[build]       |                     r_key
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:278:20: error: invalid type argument of unary ‘*’ (have ‘__gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>::iterator’ {aka ‘int’})
+[build]   278 |           if (m_eq(*it, r_key))
+[build]       |                    ^~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp: In member function ‘void __gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>::assert_valid(const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:290:33: error: ‘m_keys’ was not declared in this scope
+[build]   290 |       const_iterator prime_it = m_keys.begin();
+[build]       |                                 ^~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:297:15: error: invalid type argument of unary ‘*’ (have ‘__gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>::const_iterator’ {aka ‘int’})
+[build]   297 |               PB_DS_DEBUG_VERIFY(!m_eq(*sec_it, *prime_it));
+[build]       |               ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:297:15: error: invalid type argument of unary ‘*’ (have ‘__gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>::const_iterator’ {aka ‘int’})
+[build]   297 |               PB_DS_DEBUG_VERIFY(!m_eq(*sec_it, *prime_it));
+[build]       |               ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:297:15: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   297 |               PB_DS_DEBUG_VERIFY(!m_eq(*sec_it, *prime_it));
+[build]       |               ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:298:15: error: invalid type argument of unary ‘*’ (have ‘__gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>::const_iterator’ {aka ‘int’})
+[build]   298 |               PB_DS_DEBUG_VERIFY(!m_eq(*prime_it, *sec_it));
+[build]       |               ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:298:15: error: invalid type argument of unary ‘*’ (have ‘__gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>::const_iterator’ {aka ‘int’})
+[build]   298 |               PB_DS_DEBUG_VERIFY(!m_eq(*prime_it, *sec_it));
+[build]       |               ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:298:15: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   298 |               PB_DS_DEBUG_VERIFY(!m_eq(*prime_it, *sec_it));
+[build]       |               ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp: In member function ‘void __gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>::split(key_const_reference, Cmp_Fn, __gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>&)’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:312:21: error: ‘m_keys’ was not declared in this scope; did you mean ‘r_key’?
+[build]   312 |       iterator it = m_keys.begin();
+[build]       |                     ^~~~~~
+[build]       |                     r_key
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:314:27: error: invalid type argument of unary ‘*’ (have ‘__gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>::iterator’ {aka ‘int’})
+[build]   314 |         if (cmp_fn(r_key, *it))
+[build]       |                           ^~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:316:30: error: invalid type argument of unary ‘*’ (have ‘__gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>::iterator’ {aka ‘int’})
+[build]   316 |             other.insert_new(*it);
+[build]       |                              ^~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp: In member function ‘void __gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>::join(__gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>&, bool)’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/debug_map_base.hpp:331:22: error: invalid type argument of unary ‘*’ (have ‘__gnu_pbds::detail::debug_map_base<Key, Eq_Fn, Const_Key_Reference>::iterator’ {aka ‘int’})
+[build]   331 |           insert_new(*it);
+[build]       |                      ^~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::bin_search_tree_map<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_valid(const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:56:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    56 |       PB_DS_DEBUG_VERIFY(m_size == 0);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:60:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    60 |       PB_DS_DEBUG_VERIFY(m_size > 0);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::bin_search_tree_map<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::structure_only_assert_valid(const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:69:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    69 |   PB_DS_DEBUG_VERIFY(m_p_head != 0);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:72:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    72 |       PB_DS_DEBUG_VERIFY(m_p_head->m_p_left == m_p_head);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:73:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    73 |       PB_DS_DEBUG_VERIFY(m_p_head->m_p_right == m_p_head);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:77:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    77 |       PB_DS_DEBUG_VERIFY(m_p_head->m_p_parent->m_p_parent == m_p_head);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:78:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    78 |       PB_DS_DEBUG_VERIFY(m_p_head->m_p_left != m_p_head);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:79:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    79 |       PB_DS_DEBUG_VERIFY(m_p_head->m_p_right != m_p_head);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp: In member function ‘__gnu_pbds::detail::bin_search_tree_map<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::node_consistent_t __gnu_pbds::detail::bin_search_tree_map<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_node_consistent_(node_pointer, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:113:5: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   113 |     PB_DS_DEBUG_VERIFY(Cmp_Fn::operator()(PB_DS_V2F(*l_range.second),
+[build]       |     ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:120:5: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   120 |     PB_DS_DEBUG_VERIFY(Cmp_Fn::operator()(PB_DS_V2F(p_nd->m_value),
+[build]       |     ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::bin_search_tree_map<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_node_consistent_with_left(node_pointer, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:135:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   135 |   PB_DS_DEBUG_VERIFY(p_nd->m_p_left->m_p_parent == p_nd);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:136:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   136 |   PB_DS_DEBUG_VERIFY(!Cmp_Fn::operator()(PB_DS_V2F(p_nd->m_value),
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::bin_search_tree_map<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_node_consistent_with_right(node_pointer, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:148:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   148 |   PB_DS_DEBUG_VERIFY(p_nd->m_p_right->m_p_parent == p_nd);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:149:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   149 |   PB_DS_DEBUG_VERIFY(!Cmp_Fn::operator()(PB_DS_V2F(p_nd->m_p_right->m_value),
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::bin_search_tree_map<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_min_imp(node_pointer, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:168:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   168 |       PB_DS_DEBUG_VERIFY(m_p_head->m_p_left == m_p_head);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:174:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   174 |       PB_DS_DEBUG_VERIFY(p_nd == m_p_head->m_p_left);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::bin_search_tree_map<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_max_imp(node_pointer, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:196:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   196 |       PB_DS_DEBUG_VERIFY(m_p_head->m_p_right == m_p_head);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:202:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   202 |       PB_DS_DEBUG_VERIFY(p_nd == m_p_head->m_p_right);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::bin_search_tree_map<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_iterators(const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:219:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   219 |       PB_DS_DEBUG_VERIFY(lower_bound(PB_DS_V2F(*it)).m_p_nd == it.m_p_nd);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:222:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   222 |       PB_DS_DEBUG_VERIFY(upper_bound_it.m_p_nd == it.m_p_nd);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:225:9: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   225 |         PB_DS_DEBUG_VERIFY(Cmp_Fn::operator()(PB_DS_V2F(*prev_it),
+[build]       |         ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:230:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   230 |   PB_DS_DEBUG_VERIFY(iterated_num == m_size);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:237:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   237 |       PB_DS_DEBUG_VERIFY(lower_bound(
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:242:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   242 |       PB_DS_DEBUG_VERIFY(upper_bound_it.m_p_nd == reverse_it.m_p_nd);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:244:9: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   244 |         PB_DS_DEBUG_VERIFY(!Cmp_Fn::operator()(PB_DS_V2F(*reverse_prev_it),
+[build]       |         ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:248:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   248 |   PB_DS_DEBUG_VERIFY(reverse_iterated_num == m_size);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::bin_search_tree_map<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_size(const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:277:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   277 | { PB_DS_DEBUG_VERIFY(recursive_count(m_p_head->m_p_parent) == m_size); }
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/rb_tree_map_/debug_fn_imps.hpp: In member function ‘__gnu_pbds::detail::rb_tree_map<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::size_type __gnu_pbds::detail::rb_tree_map<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_node_consistent(node_pointer, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/rb_tree_map_/debug_fn_imps.hpp:60:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    60 |       PB_DS_DEBUG_VERIFY(is_effectively_black(p_nd->m_p_left));
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/rb_tree_map_/debug_fn_imps.hpp:61:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    61 |       PB_DS_DEBUG_VERIFY(is_effectively_black(p_nd->m_p_right));
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/rb_tree_map_/debug_fn_imps.hpp:63:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    63 |   PB_DS_DEBUG_VERIFY(l_height == r_height);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/rb_tree_map_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::rb_tree_map<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_valid(const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/rb_tree_map_/debug_fn_imps.hpp:74:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    74 |   PB_DS_DEBUG_VERIFY(p_head->m_red);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/rb_tree_map_/debug_fn_imps.hpp:77:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    77 |       PB_DS_DEBUG_VERIFY(!p_head->m_p_parent->m_red);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/splay_tree_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::splay_tree_map<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_special_imp(node_pointer, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/splay_tree_/debug_fn_imps.hpp:66:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    66 |       PB_DS_DEBUG_VERIFY(p_nd->m_special);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/splay_tree_/debug_fn_imps.hpp:71:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    71 |   PB_DS_DEBUG_VERIFY(!p_nd->m_special);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/ov_tree_map_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::ov_tree_map<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_valid(const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/ov_tree_map_/debug_fn_imps.hpp:51:5: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    51 |     PB_DS_DEBUG_VERIFY(m_a_values == 0 &&  m_end_it == 0 && m_size == 0);
+[build]       |     ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/ov_tree_map_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::ov_tree_map<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_iterators(const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/ov_tree_map_/debug_fn_imps.hpp:64:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    64 |   PB_DS_DEBUG_VERIFY(m_end_it == m_a_values + m_size);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/ov_tree_map_/debug_fn_imps.hpp:69:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    69 |       PB_DS_DEBUG_VERIFY(lower_bound(PB_DS_V2F(*it)) == it);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/ov_tree_map_/debug_fn_imps.hpp:72:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    72 |       PB_DS_DEBUG_VERIFY(upper_bound_it == it);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/ov_tree_map_/debug_fn_imps.hpp:74:9: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    74 |         PB_DS_DEBUG_VERIFY(Cmp_Fn::operator()(PB_DS_V2F(*prev_it),
+[build]       |         ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/ov_tree_map_/debug_fn_imps.hpp:78:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    78 |   PB_DS_DEBUG_VERIFY(iterated_num == m_size);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/cc_hash_table_map_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::cc_ht_map<Key, Mapped, Hash_Fn, Eq_Fn, _Alloc, Store_Hash, Comb_Hash_Fn, Resize_Policy>::assert_entry_pointer_array_valid(entry_pointer_array, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/cc_hash_table_map_/debug_fn_imps.hpp:72:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    72 |   PB_DS_DEBUG_VERIFY(iterated_num_used_e == m_num_used_e);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/cc_hash_table_map_/debug_store_hash_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::cc_ht_map<Key, Mapped, Hash_Fn, Eq_Fn, _Alloc, Store_Hash, Comb_Hash_Fn, Resize_Policy>::assert_entry_pointer_valid(entry_pointer, __gnu_pbds::detail::true_type, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/cc_hash_table_map_/debug_store_hash_fn_imps.hpp:53:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    53 |   PB_DS_DEBUG_VERIFY(p_e->m_hash == pos_hash_pair.second);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/gp_hash_table_map_/debug_no_store_hash_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::gp_ht_map<Key, Mapped, Hash_Fn, Eq_Fn, _Alloc, Store_Hash, Comb_Probe_Fn, Probe_Fn, Resize_Policy>::assert_entry_array_valid(entry_array, __gnu_pbds::detail::false_type, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/gp_hash_table_map_/debug_no_store_hash_fn_imps.hpp:68:11: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    68 |           PB_DS_DEBUG_VERIFY(0);
+[build]       |           ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/gp_hash_table_map_/debug_no_store_hash_fn_imps.hpp:71:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    71 |   PB_DS_DEBUG_VERIFY(iterated_num_used_e == m_num_used_e);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/gp_hash_table_map_/debug_store_hash_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::gp_ht_map<Key, Mapped, Hash_Fn, Eq_Fn, _Alloc, Store_Hash, Comb_Probe_Fn, Probe_Fn, Resize_Policy>::assert_entry_array_valid(entry_array, __gnu_pbds::detail::true_type, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/gp_hash_table_map_/debug_store_hash_fn_imps.hpp:68:13: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    68 |             PB_DS_DEBUG_VERIFY(p_e->m_hash == pos_hash_pair.second);
+[build]       |             ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/gp_hash_table_map_/debug_store_hash_fn_imps.hpp:73:11: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    73 |           PB_DS_DEBUG_VERIFY(0);
+[build]       |           ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/gp_hash_table_map_/debug_store_hash_fn_imps.hpp:77:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    77 |   PB_DS_DEBUG_VERIFY(iterated_num_used_e == m_num_used_e);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] In file included from /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp:55,
+[build]                  from /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/container_base_dispatch.hpp:73:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_base.hpp: In member function ‘virtual __gnu_pbds::detail::pat_trie_base::_Head<_ATraits, Metadata>::node_debug_info __gnu_pbds::detail::pat_trie_base::_Head<_ATraits, Metadata>::assert_valid_imp(a_const_pointer, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_base.hpp:151:34: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   151 |                                  _M_message("Assertion from %1;:%2;")
+[build]       |                                  ^~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_base.hpp: In member function ‘virtual __gnu_pbds::detail::pat_trie_base::_Leaf<_ATraits, Metadata>::node_debug_info __gnu_pbds::detail::pat_trie_base::_Leaf<_ATraits, Metadata>::assert_valid_imp(a_const_pointer, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_base.hpp:196:9: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   196 |         PB_DS_DEBUG_VERIFY(base_type::m_type == leaf_node);
+[build]       |         ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_base.hpp: In member function ‘virtual __gnu_pbds::detail::pat_trie_base::_Inode<_ATraits, Metadata>::node_debug_info __gnu_pbds::detail::pat_trie_base::_Inode<_ATraits, Metadata>::assert_valid_imp(a_const_pointer, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_base.hpp:1327:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]  1327 |       PB_DS_DEBUG_VERIFY(base_type::m_type == i_node);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_base.hpp:1328:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]  1328 |       PB_DS_DEBUG_VERIFY(static_cast<size_type>(std::distance(pref_b_it(), pref_e_it())) == m_e_ind);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_base.hpp:1329:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]  1329 |       PB_DS_DEBUG_VERIFY(std::distance(begin(), end()) >= 2);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_base.hpp:1334:11: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]  1334 |           PB_DS_DEBUG_VERIFY(p_nd->m_p_parent == this);
+[build]       |           ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_base.hpp:1338:11: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]  1338 |           PB_DS_DEBUG_VERIFY(static_cast<size_type>(std::distance(child_ret.first, child_ret.second)) >= m_e_ind);
+[build]       |           ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_base.hpp:1339:11: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]  1339 |           PB_DS_DEBUG_VERIFY(should_be_mine(child_ret.first, child_ret.second, 0, p_traits));
+[build]       |           ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_base.hpp:1340:11: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]  1340 |           PB_DS_DEBUG_VERIFY(get_pref_pos(child_ret.first, child_ret.second, p_traits) == static_cast<size_type>(it.m_p_p_cur - m_a_p_children));
+[build]       |           ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp: At global scope:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp:185:22: error: ‘std’ in namespace ‘std’ does not name a type
+[build]   185 |         typedef std::_GLIBCXX_STD_C::list<__inp, __rebind_inp>  bag_type;
+[build]       |                      ^~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp:190:9: error: ‘bag_type’ does not name a type; did you mean ‘base_type’?
+[build]   190 |         bag_type                                                m_bag;
+[build]       |         ^~~~~~~~
+[build]       |         base_type
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp: In member function ‘void __gnu_pbds::detail::pat_trie_map<Key, Mapped, Node_And_It_Traits, _Alloc>::branch_bag::add_branch()’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp:198:15: error: ‘m_bag’ was not declared in this scope
+[build]   198 |               m_bag.push_back(p_nd);
+[build]       |               ^~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp: In member function ‘__gnu_pbds::detail::pat_trie_map<Key, Mapped, Node_And_It_Traits, _Alloc>::inode_pointer __gnu_pbds::detail::pat_trie_map<Key, Mapped, Node_And_It_Traits, _Alloc>::branch_bag::get_branch()’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp:211:33: error: ‘m_bag’ was not declared in this scope
+[build]   211 |           inode_pointer p_nd = *m_bag.begin();
+[build]       |                                 ^~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp: In destructor ‘__gnu_pbds::detail::pat_trie_map<Key, Mapped, Node_And_It_Traits, _Alloc>::branch_bag::~branch_bag()’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp:218:19: error: ‘m_bag’ was not declared in this scope
+[build]   218 |           while (!m_bag.empty())
+[build]       |                   ^~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp: In member function ‘bool __gnu_pbds::detail::pat_trie_map<Key, Mapped, Node_And_It_Traits, _Alloc>::branch_bag::empty() const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp:228:18: error: ‘m_bag’ was not declared in this scope
+[build]   228 |         { return m_bag.empty(); }
+[build]       |                  ^~~~~
+[build] In file included from /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp:583:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/split_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::pat_trie_map<Key, Mapped, Node_And_It_Traits, _Alloc>::split_insert_branch(size_type, a_const_iterator, inode_iterator, size_type, branch_bag&)’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/split_fn_imps.hpp:207:40: error: ‘start’ was not declared in this scope
+[build]   207 |   const size_type total_num_children = start + num_children;
+[build]       |                                        ^~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::pat_trie_map<Key, Mapped, Node_And_It_Traits, _Alloc>::assert_valid(const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:56:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    56 |       PB_DS_DEBUG_VERIFY(m_p_head->m_p_min == m_p_head);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:57:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    57 |       PB_DS_DEBUG_VERIFY(m_p_head->m_p_max == m_p_head);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:58:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    58 |       PB_DS_DEBUG_VERIFY(empty());
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:62:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    62 |   PB_DS_DEBUG_VERIFY(m_p_head->m_p_min->m_type == leaf_node);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:63:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    63 |   PB_DS_DEBUG_VERIFY(m_p_head->m_p_max->m_type == leaf_node);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:64:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    64 |   PB_DS_DEBUG_VERIFY(!empty());
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::pat_trie_map<Key, Mapped, Node_And_It_Traits, _Alloc>::assert_iterators(const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:77:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    77 |       PB_DS_DEBUG_VERIFY(lower_bound(PB_DS_V2F(*it)) == it);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:78:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    78 |       PB_DS_DEBUG_VERIFY(--upper_bound(PB_DS_V2F(*it)) == it);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:80:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    80 |   PB_DS_DEBUG_VERIFY(calc_size == m_size);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::pat_trie_map<Key, Mapped, Node_And_It_Traits, _Alloc>::assert_reverse_iterators(const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:94:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    94 |       PB_DS_DEBUG_VERIFY(p_nd == it.m_p_nd);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:96:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    96 |   PB_DS_DEBUG_VERIFY(calc_size == m_size);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp: In static member function ‘static __gnu_pbds::detail::pat_trie_map<Key, Mapped, Node_And_It_Traits, _Alloc>::size_type __gnu_pbds::detail::pat_trie_map<Key, Mapped, Node_And_It_Traits, _Alloc>::recursive_count_leafs(node_const_pointer, const char*, int)’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:108:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   108 |   PB_DS_DEBUG_VERIFY(p_nd->m_type == i_node);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::bin_search_tree_set<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_valid(const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:56:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    56 |       PB_DS_DEBUG_VERIFY(m_size == 0);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:60:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    60 |       PB_DS_DEBUG_VERIFY(m_size > 0);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::bin_search_tree_set<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::structure_only_assert_valid(const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:69:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    69 |   PB_DS_DEBUG_VERIFY(m_p_head != 0);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:72:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    72 |       PB_DS_DEBUG_VERIFY(m_p_head->m_p_left == m_p_head);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:73:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    73 |       PB_DS_DEBUG_VERIFY(m_p_head->m_p_right == m_p_head);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:77:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    77 |       PB_DS_DEBUG_VERIFY(m_p_head->m_p_parent->m_p_parent == m_p_head);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:78:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    78 |       PB_DS_DEBUG_VERIFY(m_p_head->m_p_left != m_p_head);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:79:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    79 |       PB_DS_DEBUG_VERIFY(m_p_head->m_p_right != m_p_head);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp: In member function ‘__gnu_pbds::detail::bin_search_tree_set<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::node_consistent_t __gnu_pbds::detail::bin_search_tree_set<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_node_consistent_(node_pointer, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:113:5: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   113 |     PB_DS_DEBUG_VERIFY(Cmp_Fn::operator()(PB_DS_V2F(*l_range.second),
+[build]       |     ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:120:5: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   120 |     PB_DS_DEBUG_VERIFY(Cmp_Fn::operator()(PB_DS_V2F(p_nd->m_value),
+[build]       |     ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::bin_search_tree_set<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_node_consistent_with_left(node_pointer, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:135:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   135 |   PB_DS_DEBUG_VERIFY(p_nd->m_p_left->m_p_parent == p_nd);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:136:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   136 |   PB_DS_DEBUG_VERIFY(!Cmp_Fn::operator()(PB_DS_V2F(p_nd->m_value),
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::bin_search_tree_set<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_node_consistent_with_right(node_pointer, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:148:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   148 |   PB_DS_DEBUG_VERIFY(p_nd->m_p_right->m_p_parent == p_nd);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:149:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   149 |   PB_DS_DEBUG_VERIFY(!Cmp_Fn::operator()(PB_DS_V2F(p_nd->m_p_right->m_value),
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::bin_search_tree_set<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_min_imp(node_pointer, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:168:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   168 |       PB_DS_DEBUG_VERIFY(m_p_head->m_p_left == m_p_head);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:174:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   174 |       PB_DS_DEBUG_VERIFY(p_nd == m_p_head->m_p_left);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::bin_search_tree_set<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_max_imp(node_pointer, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:196:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   196 |       PB_DS_DEBUG_VERIFY(m_p_head->m_p_right == m_p_head);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:202:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   202 |       PB_DS_DEBUG_VERIFY(p_nd == m_p_head->m_p_right);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::bin_search_tree_set<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_iterators(const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:219:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   219 |       PB_DS_DEBUG_VERIFY(lower_bound(PB_DS_V2F(*it)).m_p_nd == it.m_p_nd);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:222:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   222 |       PB_DS_DEBUG_VERIFY(upper_bound_it.m_p_nd == it.m_p_nd);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:225:9: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   225 |         PB_DS_DEBUG_VERIFY(Cmp_Fn::operator()(PB_DS_V2F(*prev_it),
+[build]       |         ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:230:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   230 |   PB_DS_DEBUG_VERIFY(iterated_num == m_size);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:237:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   237 |       PB_DS_DEBUG_VERIFY(lower_bound(
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:242:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   242 |       PB_DS_DEBUG_VERIFY(upper_bound_it.m_p_nd == reverse_it.m_p_nd);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:244:9: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   244 |         PB_DS_DEBUG_VERIFY(!Cmp_Fn::operator()(PB_DS_V2F(*reverse_prev_it),
+[build]       |         ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:248:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   248 |   PB_DS_DEBUG_VERIFY(reverse_iterated_num == m_size);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::bin_search_tree_set<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_size(const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/bin_search_tree_/debug_fn_imps.hpp:277:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   277 | { PB_DS_DEBUG_VERIFY(recursive_count(m_p_head->m_p_parent) == m_size); }
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/rb_tree_map_/debug_fn_imps.hpp: In member function ‘__gnu_pbds::detail::rb_tree_set<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::size_type __gnu_pbds::detail::rb_tree_set<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_node_consistent(node_pointer, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/rb_tree_map_/debug_fn_imps.hpp:60:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    60 |       PB_DS_DEBUG_VERIFY(is_effectively_black(p_nd->m_p_left));
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/rb_tree_map_/debug_fn_imps.hpp:61:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    61 |       PB_DS_DEBUG_VERIFY(is_effectively_black(p_nd->m_p_right));
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/rb_tree_map_/debug_fn_imps.hpp:63:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    63 |   PB_DS_DEBUG_VERIFY(l_height == r_height);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/rb_tree_map_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::rb_tree_set<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_valid(const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/rb_tree_map_/debug_fn_imps.hpp:74:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    74 |   PB_DS_DEBUG_VERIFY(p_head->m_red);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/rb_tree_map_/debug_fn_imps.hpp:77:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    77 |       PB_DS_DEBUG_VERIFY(!p_head->m_p_parent->m_red);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/splay_tree_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::splay_tree_set<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_special_imp(node_pointer, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/splay_tree_/debug_fn_imps.hpp:66:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    66 |       PB_DS_DEBUG_VERIFY(p_nd->m_special);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/splay_tree_/debug_fn_imps.hpp:71:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    71 |   PB_DS_DEBUG_VERIFY(!p_nd->m_special);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/ov_tree_map_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::ov_tree_set<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_valid(const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/ov_tree_map_/debug_fn_imps.hpp:51:5: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    51 |     PB_DS_DEBUG_VERIFY(m_a_values == 0 &&  m_end_it == 0 && m_size == 0);
+[build]       |     ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/ov_tree_map_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::ov_tree_set<Key, Mapped, Cmp_Fn, Node_And_It_Traits, _Alloc>::assert_iterators(const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/ov_tree_map_/debug_fn_imps.hpp:64:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    64 |   PB_DS_DEBUG_VERIFY(m_end_it == m_a_values + m_size);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/ov_tree_map_/debug_fn_imps.hpp:69:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    69 |       PB_DS_DEBUG_VERIFY(lower_bound(PB_DS_V2F(*it)) == it);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/ov_tree_map_/debug_fn_imps.hpp:72:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    72 |       PB_DS_DEBUG_VERIFY(upper_bound_it == it);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/ov_tree_map_/debug_fn_imps.hpp:74:9: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    74 |         PB_DS_DEBUG_VERIFY(Cmp_Fn::operator()(PB_DS_V2F(*prev_it),
+[build]       |         ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/ov_tree_map_/debug_fn_imps.hpp:78:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    78 |   PB_DS_DEBUG_VERIFY(iterated_num == m_size);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/cc_hash_table_map_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::cc_ht_set<Key, Mapped, Hash_Fn, Eq_Fn, _Alloc, Store_Hash, Comb_Hash_Fn, Resize_Policy>::assert_entry_pointer_array_valid(entry_pointer_array, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/cc_hash_table_map_/debug_fn_imps.hpp:72:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    72 |   PB_DS_DEBUG_VERIFY(iterated_num_used_e == m_num_used_e);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/cc_hash_table_map_/debug_store_hash_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::cc_ht_set<Key, Mapped, Hash_Fn, Eq_Fn, _Alloc, Store_Hash, Comb_Hash_Fn, Resize_Policy>::assert_entry_pointer_valid(entry_pointer, __gnu_pbds::detail::true_type, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/cc_hash_table_map_/debug_store_hash_fn_imps.hpp:53:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    53 |   PB_DS_DEBUG_VERIFY(p_e->m_hash == pos_hash_pair.second);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/gp_hash_table_map_/debug_no_store_hash_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::gp_ht_set<Key, Mapped, Hash_Fn, Eq_Fn, _Alloc, Store_Hash, Comb_Probe_Fn, Probe_Fn, Resize_Policy>::assert_entry_array_valid(entry_array, __gnu_pbds::detail::false_type, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/gp_hash_table_map_/debug_no_store_hash_fn_imps.hpp:68:11: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    68 |           PB_DS_DEBUG_VERIFY(0);
+[build]       |           ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/gp_hash_table_map_/debug_no_store_hash_fn_imps.hpp:71:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    71 |   PB_DS_DEBUG_VERIFY(iterated_num_used_e == m_num_used_e);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/gp_hash_table_map_/debug_store_hash_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::gp_ht_set<Key, Mapped, Hash_Fn, Eq_Fn, _Alloc, Store_Hash, Comb_Probe_Fn, Probe_Fn, Resize_Policy>::assert_entry_array_valid(entry_array, __gnu_pbds::detail::true_type, const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/gp_hash_table_map_/debug_store_hash_fn_imps.hpp:68:13: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    68 |             PB_DS_DEBUG_VERIFY(p_e->m_hash == pos_hash_pair.second);
+[build]       |             ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/gp_hash_table_map_/debug_store_hash_fn_imps.hpp:73:11: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    73 |           PB_DS_DEBUG_VERIFY(0);
+[build]       |           ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/gp_hash_table_map_/debug_store_hash_fn_imps.hpp:77:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    77 |   PB_DS_DEBUG_VERIFY(iterated_num_used_e == m_num_used_e);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp: At global scope:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp:185:22: error: ‘std’ in namespace ‘std’ does not name a type
+[build]   185 |         typedef std::_GLIBCXX_STD_C::list<__inp, __rebind_inp>  bag_type;
+[build]       |                      ^~~~~~~~~~~~~~
+[build] In file included from /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/container_base_dispatch.hpp:90:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp:190:9: error: ‘bag_type’ does not name a type; did you mean ‘base_type’?
+[build]   190 |         bag_type                                                m_bag;
+[build]       |         ^~~~~~~~
+[build]       |         base_type
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp: In member function ‘void __gnu_pbds::detail::pat_trie_set<Key, Mapped, Node_And_It_Traits, _Alloc>::branch_bag::add_branch()’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp:198:15: error: ‘m_bag’ was not declared in this scope
+[build]   198 |               m_bag.push_back(p_nd);
+[build]       |               ^~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp: In member function ‘__gnu_pbds::detail::pat_trie_set<Key, Mapped, Node_And_It_Traits, _Alloc>::inode_pointer __gnu_pbds::detail::pat_trie_set<Key, Mapped, Node_And_It_Traits, _Alloc>::branch_bag::get_branch()’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp:211:33: error: ‘m_bag’ was not declared in this scope
+[build]   211 |           inode_pointer p_nd = *m_bag.begin();
+[build]       |                                 ^~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp: In destructor ‘__gnu_pbds::detail::pat_trie_set<Key, Mapped, Node_And_It_Traits, _Alloc>::branch_bag::~branch_bag()’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp:218:19: error: ‘m_bag’ was not declared in this scope
+[build]   218 |           while (!m_bag.empty())
+[build]       |                   ^~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp: In member function ‘bool __gnu_pbds::detail::pat_trie_set<Key, Mapped, Node_And_It_Traits, _Alloc>::branch_bag::empty() const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp:228:18: error: ‘m_bag’ was not declared in this scope
+[build]   228 |         { return m_bag.empty(); }
+[build]       |                  ^~~~~
+[build] In file included from /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/pat_trie_.hpp:583:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/split_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::pat_trie_set<Key, Mapped, Node_And_It_Traits, _Alloc>::split_insert_branch(size_type, a_const_iterator, inode_iterator, size_type, branch_bag&)’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/split_fn_imps.hpp:207:40: error: ‘start’ was not declared in this scope
+[build]   207 |   const size_type total_num_children = start + num_children;
+[build]       |                                        ^~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::pat_trie_set<Key, Mapped, Node_And_It_Traits, _Alloc>::assert_valid(const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:56:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    56 |       PB_DS_DEBUG_VERIFY(m_p_head->m_p_min == m_p_head);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:57:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    57 |       PB_DS_DEBUG_VERIFY(m_p_head->m_p_max == m_p_head);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:58:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    58 |       PB_DS_DEBUG_VERIFY(empty());
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:62:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    62 |   PB_DS_DEBUG_VERIFY(m_p_head->m_p_min->m_type == leaf_node);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:63:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    63 |   PB_DS_DEBUG_VERIFY(m_p_head->m_p_max->m_type == leaf_node);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:64:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    64 |   PB_DS_DEBUG_VERIFY(!empty());
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::pat_trie_set<Key, Mapped, Node_And_It_Traits, _Alloc>::assert_iterators(const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:77:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    77 |       PB_DS_DEBUG_VERIFY(lower_bound(PB_DS_V2F(*it)) == it);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:78:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    78 |       PB_DS_DEBUG_VERIFY(--upper_bound(PB_DS_V2F(*it)) == it);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:80:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    80 |   PB_DS_DEBUG_VERIFY(calc_size == m_size);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp: In member function ‘void __gnu_pbds::detail::pat_trie_set<Key, Mapped, Node_And_It_Traits, _Alloc>::assert_reverse_iterators(const char*, int) const’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:94:7: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    94 |       PB_DS_DEBUG_VERIFY(p_nd == it.m_p_nd);
+[build]       |       ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:96:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]    96 |   PB_DS_DEBUG_VERIFY(calc_size == m_size);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp: In static member function ‘static __gnu_pbds::detail::pat_trie_set<Key, Mapped, Node_And_It_Traits, _Alloc>::size_type __gnu_pbds::detail::pat_trie_set<Key, Mapped, Node_And_It_Traits, _Alloc>::recursive_count_leafs(node_const_pointer, const char*, int)’:
+[build] /usr/lib/gcc/x86_64-pc-linux-gnu/13/include/g++-v13/ext/pb_ds/detail/pat_trie_/debug_fn_imps.hpp:108:3: error: there are no arguments to ‘_M_message’ that depend on a template parameter, so a declaration of ‘_M_message’ must be available [-fpermissive]
+[build]   108 |   PB_DS_DEBUG_VERIFY(p_nd->m_type == i_node);
+[build]       |   ^~~~~~~~~~~~~~~~~~
+[build] ninja: build stopped: subcommand failed.
+[proc] The command: /usr/bin/cmake --build /home/ser/CLionProjects/untitled/build --config Debug --target all -- exited with code: 1
+[driver] Build completed: 00:00:06.241
+[build] Build finished with exit code 1

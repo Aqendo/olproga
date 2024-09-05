@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/home/ser/CLionProjects/untitled/build",
+  "command": "/usr/bin/g++ -DLOCAL  -ftrapv -ggdb -O0 -D_FORTIFY_SOURCE=2 -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -g -Winvalid-pch -x c++-header -include /home/ser/CLionProjects/untitled/build/CMakeFiles/untitled.dir/cmake_pch.hxx -o CMakeFiles/untitled.dir/cmake_pch.hxx.gch -c /home/ser/CLionProjects/untitled/build/CMakeFiles/untitled.dir/cmake_pch.hxx.cxx",
+  "file": "/home/ser/CLionProjects/untitled/build/CMakeFiles/untitled.dir/cmake_pch.hxx.cxx",
+  "output": "CMakeFiles/untitled.dir/cmake_pch.hxx.gch"
+},
+{
+  "directory": "/home/ser/CLionProjects/untitled/build",
+  "command": "/usr/bin/g++ -DLOCAL  -ftrapv -ggdb -O0 -D_FORTIFY_SOURCE=2 -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -g -Winvalid-pch -include /home/ser/CLionProjects/untitled/build/CMakeFiles/untitled.dir/cmake_pch.hxx -o CMakeFiles/untitled.dir/main.cpp.o -c /home/ser/CLionProjects/untitled/main.cpp",
+  "file": "/home/ser/CLionProjects/untitled/main.cpp",
+  "output": "CMakeFiles/untitled.dir/main.cpp.o"
+},
+{
+  "directory": "/home/ser/CLionProjects/untitled/build",
+  "command": "/usr/bin/g++ -DLOCAL  -ftrapv -ggdb -O0 -D_FORTIFY_SOURCE=2 -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -g -Winvalid-pch -x c++-header -include /home/ser/CLionProjects/untitled/build/CMakeFiles/slow.dir/cmake_pch.hxx -o CMakeFiles/slow.dir/cmake_pch.hxx.gch -c /home/ser/CLionProjects/untitled/build/CMakeFiles/slow.dir/cmake_pch.hxx.cxx",
+  "file": "/home/ser/CLionProjects/untitled/build/CMakeFiles/slow.dir/cmake_pch.hxx.cxx",
+  "output": "CMakeFiles/slow.dir/cmake_pch.hxx.gch"
+},
+{
+  "directory": "/home/ser/CLionProjects/untitled/build",
+  "command": "/usr/bin/g++ -DLOCAL  -ftrapv -ggdb -O0 -D_FORTIFY_SOURCE=2 -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -g -Winvalid-pch -include /home/ser/CLionProjects/untitled/build/CMakeFiles/slow.dir/cmake_pch.hxx -o CMakeFiles/slow.dir/slow.cpp.o -c /home/ser/CLionProjects/untitled/slow.cpp",
+  "file": "/home/ser/CLionProjects/untitled/slow.cpp",
+  "output": "CMakeFiles/slow.dir/slow.cpp.o"
+}
+]

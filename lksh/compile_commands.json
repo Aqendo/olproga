@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/Users/sergey/CLionProjects/technocup",
+  "command": "/opt/homebrew/bin/g++-13    --std=c++20 -DSEREGA -DLOCAL -gdwarf-4 -O0 -Wshadow -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -o CMakeFiles/M.dir/geometry/M.cpp.o -c /Users/sergey/CLionProjects/technocup/geometry/M.cpp",
+  "file": "/Users/sergey/CLionProjects/technocup/geometry/M.cpp",
+  "output": "CMakeFiles/M.dir/geometry/M.cpp.o"
+}
+]
