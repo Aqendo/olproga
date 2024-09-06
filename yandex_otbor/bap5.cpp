@@ -1,12 +1,13 @@
 #include "bits/stdc++.h"
-
 using namespace std;
 #define int long long
 #define double long double
 #ifdef SEREGA
 #include "../debug.h"
 auto freopen_input_result_ = freopen("../input.txt", "r", stdin);
-// auto freopen_output_result_ = freopen("output.txt", "r", stdout);
+//  auto freopen_output_result_ = freopen("output.txt", "r", stdout);
+#else
+#define debug(...)
 #endif
 
 const double PI = acosl(-1);
@@ -48,7 +49,7 @@ struct Point {
 
     double len() const { return sqrtl(1ll * x * x + 1ll * y * y); }
     double angle(Point p2) {
-        double atan2_result = atan2(vecmul(p2), scalmul(p2));
+        double atan2_result = atan2l(vecmul(p2), scalmul(p2));
         if (atan2_result < 0) {
             atan2_result += 2 * PI;
         }
@@ -71,12 +72,16 @@ string to_string(const Point& p) {
 bool is_lower(double a, double b) {
     return a - b < EPS;
 }
+#ifndef SEREGA
+#define printf(...)
+#endif
 void solve() {
     int n;
     cin >> n;
     vector<Point> a(n);
     for (int i = 0; i < n; ++i) {
         cin >> a[i];
+        debug(a[i]);
     }
     int mx = 0;
     for (int i = 0; i < n; ++i) {
@@ -86,32 +91,39 @@ void solve() {
     bool already = false;
     for (int i_ = mx + n; i_ < mx + 2 * n; ++i_) {
         Point i = a[i_ % n];
-        Point before = a[(i_ + 1) % n];
-        Point after = a[(i_ - 1) % n];
+        Point before = a[(i_ - 1) % n];
+        Point after = a[(i_ + 1) % n];
+        debug(before, i, after);
+        if (after.y < i.y) {
+            already = false;
+        }
         if (before.y < i.y || after.y < i.y) continue;
         before -= i;
         after -= i;
         // debug(before, after);
-        double angle = before.angle(after);
+        double angle = after.angle(before);
         // debug(angle);
-        if (is_lower(PI, angle)) continue;
-        // cout << format("[{};{}] maybe\n", i.x, i.y);
+        if (is_lower(PI, angle)) {
+            // already = false;
+            continue;
+        }
+        printf("[%lld;%lld] maybe\n", i.x, i.y);
         if (before.y == 0 && after.y == 0) continue;
         if (before.y > 0 && after.y > 0) {
-            // cout << format("[{};{}] 100%\n", i.x, i.y);
-            already = false;
+            printf("[%lld;%lld] 100%%\n", i.x, i.y);
+            already = true;
             cnt++;
         } else if (after.y > 0 && before.y == 0) {
+            debug(before, after);
             if (!already) {
-                // cout << format("[{};{}] 100%\n", i.x, i.y);
+                printf("[%lld;%lld] 101%%\n", i.x, i.y);
                 already = true;
                 cnt++;
             }
-        } else {
-            already = false;
         }
+        if (before.y < 0 && after.y < 0) already = false;
     }
-    cout << cnt;
+    cout << cnt << endl;
 }
 
 signed main() {
