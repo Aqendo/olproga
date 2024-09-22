@@ -1,14 +1,14 @@
 [
 {
-  "directory": "/home/ser/CLionProjects/untitled",
-  "command": "/usr/bin/c++ -DLOCAL -DSEREGA   -o CMakeFiles/untitled.dir/main.cpp.o -c /home/ser/CLionProjects/untitled/main.cpp",
-  "file": "/home/ser/CLionProjects/untitled/main.cpp",
+  "directory": "/home/ser/olproga",
+  "command": "/usr/bin/c++ -DLOCAL -DSEREGA   -DINPUT_PATH='\"/home/ser/olproga/input.txt\"' -std=gnu++20 -o CMakeFiles/untitled.dir/main.cpp.o -c /home/ser/olproga/main.cpp",
+  "file": "/home/ser/olproga/main.cpp",
   "output": "CMakeFiles/untitled.dir/main.cpp.o"
 },
 {
-  "directory": "/home/ser/CLionProjects/untitled",
-  "command": "/usr/bin/c++ -DLOCAL -DSEREGA   -o CMakeFiles/slow.dir/slow.cpp.o -c /home/ser/CLionProjects/untitled/slow.cpp",
-  "file": "/home/ser/CLionProjects/untitled/slow.cpp",
+  "directory": "/home/ser/olproga",
+  "command": "/usr/bin/c++ -DLOCAL -DSEREGA   -DINPUT_PATH='\"/home/ser/olproga/input.txt\"' -std=gnu++20 -o CMakeFiles/slow.dir/slow.cpp.o -c /home/ser/olproga/slow.cpp",
+  "file": "/home/ser/olproga/slow.cpp",
   "output": "CMakeFiles/slow.dir/slow.cpp.o"
 }
 ]
