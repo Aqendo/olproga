@@ -9,9 +9,9 @@ auto freopen_input_result_ = freopen(INPUT_PATH, "r", stdin);
 
 #ifndef SEREGA
 #define printf(...)
-#define debug(...)
 #endif
 
+#define debug(...)
 struct Segtree {
     vector<int> tree;
     vector<int> changed;
@@ -30,13 +30,15 @@ struct Segtree {
     }
 
     void push(int x, int lx, int rx) {
-        // debug("x=", x, lx, rx);
+        debug("x=", x, lx, rx);
+        debug("added for that:", added[x]);
+        debug("changed for that:", changed[x]);
         if (lx == rx) {
             if (changed[x] != -69) {
                 tree[x] = changed[x];
             }
-            // debug("was", tree[x]);
-            // debug("adder", added[x]);
+            debug("was", tree[x]);
+            debug("adder", added[x]);
             tree[x] += added[x];
 
             changed[x] = -69;
@@ -47,17 +49,17 @@ struct Segtree {
         int len1 = m - lx + 1;
         int len2 = rx - m;
         if (changed[x] != -69) {
-            added[x << 1] += added[x];
+            added[x << 1] = added[x];
             changed[x << 1] = changed[x];
 
             changed[x << 1 | 1] = changed[x];
-            added[x << 1 | 1] += added[x];
+            added[x << 1 | 1] = added[x];
 
-            // debug("1:", len1, changed[x << 1], added[x << 1]);
+            debug("1:", len1, changed[x << 1], added[x << 1]);
             tree[x << 1] = len1 * (changed[x << 1] + added[x << 1]);
-            // debug("2:", len2, changed[x << 1 | 1], added[x << 1 | 1]);
+            debug("2:", len2, changed[x << 1 | 1], added[x << 1 | 1]);
             tree[x << 1 | 1] = len2 * (changed[x << 1 | 1] + added[x << 1 | 1]);
-            // debug(tree[x << 1], tree[x << 1 | 1]);
+            debug(tree[x << 1], tree[x << 1 | 1]);
             added[x] = 0;
             changed[x] = -69;
             if (len1 == 1) {
@@ -69,8 +71,8 @@ struct Segtree {
                 changed[x << 1 | 1] = -69;
             }
 
-            // debug("now added[x<<1]:", added[x << 1], "added[x<<1|1]:", added[x << 1 | 1]);
-            // debug("now changed[x<<1]:", changed[x << 1], "changed[x<<1|1]:", changed[x << 1 | 1]);
+            debug("now added[x<<1]:", added[x << 1], "added[x<<1|1]:", added[x << 1 | 1]);
+            debug("now changed[x<<1]:", changed[x << 1], "changed[x<<1|1]:", changed[x << 1 | 1]);
             tree[x] = tree[x << 1] + tree[x << 1 | 1];
         } else {
             if (len1 != 1) {
@@ -97,7 +99,7 @@ struct Segtree {
             changed[x] = to_what;
             added[x] = 0;
             push(x, lx, rx);
-            // debug("treenow", tree[x]);
+            debug("treenow", tree[x]);
             return;
         }
         int m = (lx + rx) >> 1;
@@ -154,6 +156,7 @@ void solve() {
             int l, r, v;
             cin >> l >> r >> v;
             seg.change(1, 0, n - 1, l, r - 1, v);
+            // exit(0);
             // print(seg);
             // print(seg);
             // print(seg);
