@@ -1,6 +1,4 @@
 #ifdef SEREGA
-#define _LIBCPP_ENABLE_DEBUG_MODE 2
-#include "../debug.cpp"
 #include "bits/stdc++.h"
 #else
 #include "bits/stdc++.h"

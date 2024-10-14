@@ -3,6 +3,7 @@
 using namespace std;
 
 constexpr int MAXN = 20002;
+auto freopen_input_result_ = freopen(INPUT_PATH, "r", stdin);
 
 multiset<pair<int, int>> g[MAXN];
 int tin[MAXN];

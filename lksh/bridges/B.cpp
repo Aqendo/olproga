@@ -1,5 +1,4 @@
 #include "bits/stdc++.h"
-
 using namespace std;
 
 constexpr int MAXN = 20002;
@@ -9,6 +8,7 @@ int tin[MAXN];
 bool used_a[MAXN];
 int up[MAXN];
 vector<pair<int, int>> s = {{-1, -1}};
+auto freopen_input_result_ = freopen(INPUT_PATH, "r", stdin);
 
 int color = 0;
 int timer = 0;
@@ -62,9 +62,18 @@ void solve() {
             dfs(i, -1);
         }
     }
-    cout << color << '\n';
+    vector<int> min_edge_by_colors(colors.size() + 1, INT_MAX);
     for (int i = 0; i < m; ++i) {
-        cout << colors[edges[i]] << ' ';
+        min_edge_by_colors[colors[edges[i]]] = min(min_edge_by_colors[colors[edges[i]]], i);
+    }
+    vector<int> color_per(colors.size() + 1);
+    cout << color << '\n';
+    timer = 1;
+    for (int i = 0; i < m; ++i) {
+        if (color_per[colors[edges[i]]] == 0) {
+            color_per[colors[edges[i]]] = timer++;
+        }
+        cout << color_per[colors[edges[i]]] << ' ';
     }
 }
 

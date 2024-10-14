@@ -13,7 +13,8 @@ auto freopen_input_result_ = freopen(INPUT_PATH, "r", stdin);
 #define debug(...)
 #endif
 
-void solve() {}
+void solve() {
+}
 
 signed main() {
 #ifndef SEREGA

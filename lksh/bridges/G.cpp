@@ -10,6 +10,7 @@ bool used_a[MAXN];
 int colors[MAXN];
 int up[MAXN];
 vector<int> s = {-1};
+auto freopen_input_result_ = freopen(INPUT_PATH, "r", stdin);
 
 int color = 0;
 int timer = 0;

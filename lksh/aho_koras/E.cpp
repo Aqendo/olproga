@@ -2,11 +2,11 @@
 
 using namespace std;
 
-#ifdef SEREGA
+# ifdef SEREGA
 #include "../debug.h"
 auto freopen_input_result_ = freopen("../input.txt", "r", stdin);
 // auto freopen_output_result_ = freopen("output.txt", "r", stdout);
-#endif
+# endif
 
 const int BIT_COUNT = 32;
 
@@ -32,16 +32,12 @@ void add_number(int n) {
 void remove_number(int n) {
     Node* cur = &root;
     int index = -1;
-    int mx_index = 0;
     vector<pair<Node*, int>> nodes;
     for (int i = 0; i < BIT_COUNT; ++i) {
         int bit = ((n << i) & (1 << (BIT_COUNT - 1))) != 0;
         cur = cur->go[bit];
         nodes.emplace_back(cur, bit);
         index++;
-        if (cur->cnt > 0 && i != BIT_COUNT - 1) {
-            mx_index = index;
-        }
     }
     cur->cnt--;
     if (cur->cnt == 0) {

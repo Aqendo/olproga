@@ -10,7 +10,9 @@ string to_string(tuple<A, B, C, D> p);
 string to_string(const string& s) {
     return s;
 }
-
+string to_string(const char& c) {
+    return string(1, c);
+}
 string to_string(const char* s) {
     return to_string((string)s);
 }

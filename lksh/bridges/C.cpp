@@ -4,7 +4,7 @@ using namespace std;
 
 #ifdef SEREGA
 #include "../debug.h"
-auto freopen_input_result_ = freopen("input.txt", "r", stdin);
+auto freopen_input_result_ = freopen(INPUT_PATH, "r", stdin);
 // auto freopen_output_result_ = freopen("output.txt", "r", stdout);
 #endif
 
