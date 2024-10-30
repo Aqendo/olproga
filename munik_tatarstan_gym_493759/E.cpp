@@ -9,7 +9,7 @@ auto __freop = freopen(INPUT_PATH, "r", stdin);
 #else
 #define debug(...)
 #endif
-#define int int64_t
+// #define int int64_t
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
 vector<vector<int>> g;

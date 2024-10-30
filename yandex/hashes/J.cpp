@@ -1,60 +1,37 @@
-#include "bits/stdc++.h"
-#include "ext/pb_ds/assoc_container.hpp"
-using namespace __gnu_pbds;
+#include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
 using namespace std;
-# define int int64_t
-# ifdef SEREGA
-# include "/home/ser/olproga/debug.h"
-auto freopen_input_result_ = freopen(INPUT_PATH, "r", stdin);
-//  auto freopen_output_result_ = freopen("output.txt", "r", stdout);
-# endif
-
-# ifndef SEREGA
-# define printf(...)
-# define debug(...)
-# endif
+using namespace __gnu_pbds;
 template <class K, class V>
 using hash_big =
     gp_hash_table<K, V, hash<K>, equal_to<K>, direct_mask_range_hashing<>,
                   linear_probe_fn<>,
                   hash_standard_resize_policy<hash_exponential_size_policy<>,
                                               hash_load_check_resize_trigger<>, true>>;
-vector<vector<char>> g;
-const int MAXN = 501;
-int po[MAXN];
-int n, m;
-int MOD, P;
-bool is_prime(int x) {
-    for (int i = 2; i * i <= x; ++i) {
-        if (x % i == 0) return false;
-    }
-    return true;
-}
+%:define int int64_t
 
-void gen_mp() {
-    mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-    MOD = uniform_int_distribution<int>(1e9, 2e9)(rng);
-    while (!is_prime(MOD)) {
-        MOD = uniform_int_distribution<int>(1e9, 2e9)(rng);
-    }
-    P = uniform_int_distribution<int>(29, 100)(rng);
-    while (!is_prime(MOD)) {
-        MOD = uniform_int_distribution<int>(29, 100)(rng);
-    }
+
+const int q = 227, p = 239, q1 = 267, p1 = 337, mod1 = 1e9 + 7;
+// const int q = 2, p = 3;
+const int mod = 1e9 + 9;
+vector<vector<int>> h, h1;
+int po[502], qo[502], po1[502], qo1[502];
+pair<int, int> substr(int x1, int y1, int x2, int y2) {
+    return {
+        ((h[x2][y2] - h[x2][y1 - 1] * po[y2 - y1 + 1] % mod \
+        - h[x1 - 1][y2] * qo[x2 - x1 + 1] % mod + h[x1 - 1][y1 - 1] * po[y2 - y1 + 1] % mod \
+        * qo[x2 - x1 + 1] % mod) % mod + mod) % mod,
+        ((h1[x2][y2] - h1[x2][y1 - 1] * po1[y2 - y1 + 1] % mod1 \
+        - h1[x1 - 1][y2] * qo1[x2 - x1 + 1] % mod1 + h1[x1 - 1][y1 - 1] * po1[y2 - y1 + 1] % mod1 \
+        * qo1[x2 - x1 + 1] % mod1) % mod1 + mod1) % mod1
+    };
 }
-vector<vector<int>> pref_hashes;
-int substr(int i, int from, int to) {
-    return ((pref_hashes[i][to] - pref_hashes[i][from - 1] * po[to - from + 1]) % MOD + MOD) % MOD;
-}
+int n, m;
 array<int, 4> f(int side) {
-    hash_big<int32_t, int32_t> hashes;
-    hashes.resize((n - side) * (m - side));
+    map<pair<int32_t, int32_t>, int32_t> hashes;
     for (int i = 1; i + side - 1 <= n; ++i) {
         for (int j = 1; j + side - 1 <= m; ++j) {
-            int h_res = 0;
-            for (int offseti = 0; offseti < side; ++offseti) {
-                h_res = ((h_res * po[side]) + substr(i + offseti, j, j + side - 1)) % MOD;
-            }
+            pair<int32_t, int32_t> h_res = substr(i, j, i + side - 1, j + side - 1);
             if (hashes.find(h_res) != hashes.end()) {
                 return {hashes[h_res] / m, hashes[h_res] % m, i - 1, j - 1};
             }
@@ -65,19 +42,24 @@ array<int, 4> f(int side) {
 }
 
 
-
 void solve() {
     cin >> n >> m;
-    g.assign(n, vector<char> (m));
-    for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < m; ++j) {
-            cin >> g[i][j];
-        }
-    }
-    pref_hashes.assign(n + 1, vector<int> (m + 1));
+    vector<vector<char>> grid(n + 1, vector<char> (m + 1));
     for (int i = 1; i <= n; ++i) {
         for (int j = 1; j <= m; ++j) {
-            pref_hashes[i][j] = (pref_hashes[i][j - 1] * P + g[i - 1][j - 1] - 'a' + 1) % MOD;
+            cin >> grid[i][j];
+        }
+    }
+    h.assign(n + 1, vector<int> (m + 1));
+    h1.assign(n + 1, vector<int> (m + 1));
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 1; j <= m; ++j) {
+            h[i][j] = ((h[i][j - 1] * p % mod + h[i - 1][j] * q % mod \
+                - h[i - 1][j - 1] * p % mod * q % mod \
+                + grid[i][j]) % mod + mod) % mod;
+            h1[i][j] = ((h1[i][j - 1] * p1 % mod1 + h1[i - 1][j] * q1 % mod1 \
+                - h1[i - 1][j - 1] * p1 % mod1 * q1 % mod1 \
+                + grid[i][j]) % mod1 + mod1) % mod1;
         }
     }
     map<int, array<int, 4>> cache;
@@ -101,13 +83,16 @@ void solve() {
 }
 
 signed main() {
-# ifndef SEREGA
     cin.tie(nullptr)->sync_with_stdio(false);
-# endif
-    gen_mp();
     po[0] = 1;
-    for (int i = 1; i < MAXN; ++i) {
-        po[i] = (po[i - 1] * P) % MOD;
+    qo[0] = 1;
+    po1[0] = 1;
+    qo1[0] = 1;
+    for (int i = 1; i <= 501; ++i) {
+        po[i] = (po[i - 1] * p) % mod;
+        qo[i] = (qo[i - 1] * q) % mod;
+        po1[i] = (po1[i - 1] * p1) % mod1;
+        qo1[i] = (qo1[i - 1] * q1) % mod1;
     }
     solve();
 }
