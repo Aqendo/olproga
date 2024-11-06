@@ -27,16 +27,10 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=8
-FILE_NAME_0=517;C++;0;EUTF-8;1;1;0;%2Fhome%2Fser%2Folproga%2Fyandex%2Fdistturs%2Fregion%2F1%2FB.cpp;0;4
-FILE_NAME_1=9;None;0;EUTF-8;1;1;0;%2Fhome%2Fser%2Folproga%2Finput.txt;0;4
-FILE_NAME_2=204;Python;0;EUTF-8;1;1;0;%2Fhome%2Fser%2FЗагрузки%2FTelegram%20Desktop%2Fol1.py;0;4
-FILE_NAME_3=322;Python;0;EUTF-8;1;1;0;%2Fhome%2Fser%2FЗагрузки%2FTelegram%20Desktop%2Fol4.py;0;4
-FILE_NAME_4=0;Python;0;EUTF-8;1;1;0;%2Fhome%2Fser%2FЗагрузки%2FTelegram%20Desktop%2Fol5.py;0;4
-FILE_NAME_5=296;Python;0;EUTF-8;1;1;0;%2Fhome%2Fser%2FЗагрузки%2FTelegram%20Desktop%2Fol2.py;0;4
-FILE_NAME_6=0;Python;0;EUTF-8;1;1;0;%2Fhome%2Fser%2FЗагрузки%2FTelegram%20Desktop%2Fol3.py;0;4
-FILE_NAME_7=521;C++;0;EUTF-8;1;1;0;%2Fhome%2Fser%2FЗагрузки%2F3.cpp;0;4
-FILE_NAME_8=0;Python;0;EUTF-8;1;1;0;%2Fhome%2Fser%2F123.py;0;4
+current_page=2
+FILE_NAME_0=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fser%2FЗагрузки%2F17%286%29.txt;0;4
+FILE_NAME_1=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fser%2FЗагрузки%2F17_2024%281%29.txt;0;4
+FILE_NAME_2=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fser%2FЗагрузки%2F17%287%29.txt;0;4
 
 [VTE]
 last_dir=/home/ser
