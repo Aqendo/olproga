@@ -11,12 +11,12 @@ long long get_prefix(long long x, long long how_many) {
 void get_precalc() {
     long long power = 2;
     precalc[0] = 0;
-    for (int i = 1; i < 32; ++i) {
+    for (int i = 1; i < 69; ++i) {
         precalc[i] = precalc[i - 1] + power;
+        if (precalc[i] < 0) {
+            precalc[i] = (long long)1e18 + 3;
+        }
         power <<= 1;
-    }
-    for (int i = 32; i < 69; ++i) {
-        precalc[i] = (long long)1e18 + 3;
     }
 }
 
@@ -43,7 +43,11 @@ long long solve(long long n, long long k) {
     long long l = 1, r = n / 2;
     while (l != r) {
         long long m = (l + r + 1) >> 1;
-        if (f(n, m * 2) >= k) {
+        long long res = f(n, m * 2);
+        // cout << res << ' ' << m * 2 << endl;
+        // cout << res << ' ' << m * 2 << endl;
+
+        if (res >= k) {
             l = m;
         } else {
             r = m - 1;
@@ -51,6 +55,7 @@ long long solve(long long n, long long k) {
     }
     long long mx = l * 2;
     if (f(n, mx) < k) mx = 0;
+    // cout << mx << endl;
     l = 0, r = n / 2;
     while (l != r) {
         long long m = (l + r + 1) >> 1;
@@ -104,16 +109,15 @@ int main() {
     get_precalc();
     long long n, k;
     cin >> n >> k;
-    if (n <= 700) {
-        cout << get_real_answer(n, k) << endl;
-    } else {
-        cout << solve(n, k) << endl;
-    }
-    return 0;
+    cout << solve(n, k) << endl;
     // mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+    // int tc = 0;
     // while (true) {
-    //     long long n = uniform_int_distribution<int>(1, 1000)(rng);
-    //     long long k = uniform_int_distribution<int>(1, n)(rng);
+    //     if (tc++ % 1000 == 0) {
+    //         cout << tc << endl;
+    //     }
+    //     long long n = uniform_int_distribution<int>(300, 400)(rng);
+    //     long long k = uniform_int_distribution<int>(1, 10)(rng);
     //     long long real_answer = get_real_answer(n, k);
     //     long long our_answer = solve(n, k);
     //     if (our_answer != real_answer) {

@@ -1,0 +1,10 @@
+
+add_executable(sqrt_A.bin sqrt/A.cpp)
+add_executable(sqrt_B.bin sqrt/B.cpp)
+add_executable(sqrt_C.bin sqrt/C.cpp)
+add_executable(sqrt_D.bin sqrt/D.cpp)
+add_executable(sqrt_E.bin sqrt/E.cpp)
+add_executable(sqrt_F.bin sqrt/F.cpp)
+add_executable(sqrt_G.bin sqrt/G.cpp)
+add_executable(sqrt_H.bin sqrt/H.cpp)
+add_executable(sqrt_I.bin sqrt/I.cpp)

@@ -1,9 +1,11 @@
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 using namespace std;
 
 void solve() {}
 
-int main() {
+signed main() {
     cin.tie(nullptr)->sync_with_stdio(false);
-    solve();
+    int t;
+    // cin >> t;
+    while (t--) solve();
 }
