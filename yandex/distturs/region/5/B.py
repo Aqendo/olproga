@@ -11,7 +11,7 @@ for n in range(38, 2, -1):
         if m % x == 0:
             l = 2
             r = int(int(10**18) ** (1 / (n - 1))) + 1
-            while r - l > 1:
+            while r - l > ]1:
                 mid = (l + r) // 2
                 if mid * pow(1 + mid, n - 2) <= m // x:
                     l = mid
