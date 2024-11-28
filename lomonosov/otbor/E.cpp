@@ -14,6 +14,7 @@ void solve() {
     }
     auto get = [&pref](int x1, int y1, int x2, int y2) { return pref[x2][y2] - pref[x1 - 1][y2] - pref[x2][y1 - 1] + pref[x1 - 1][y1 - 1]; };
     vector<int> wesa = {-(int)1e18};
+    wesa.reserve(2500000);
     for (int ifrom = 1; ifrom <= n; ++ifrom) {
         for (int jfrom = 1; jfrom <= m; ++jfrom) {
             for (int ito = ifrom; ito <= n; ++ito) {
@@ -24,7 +25,9 @@ void solve() {
         }
     }
     wesa.push_back((int)1e18);
-    sort(wesa.begin(), wesa.end());
+    cerr << 1 << endl;
+    stable_sort(wesa.begin(), wesa.end());
+    cerr << 2 << endl;
     int answer = 0;
     for (int i = 1; i < (int)wesa.size() - 1; ++i) {
         if (wesa[i] > b) break;

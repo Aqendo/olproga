@@ -18,3 +18,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DINPUT_PATH='\"/home/ser/olproga/input.
 set(CMAKE_CXX_STANDARD 20)
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC")
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC")
+
+add_executable(otbor_A.bin otbor/A.cpp)
+add_executable(otbor_B.bin otbor/B.cpp)
+add_executable(otbor_C.bin otbor/C.cpp)
+add_executable(otbor_D.bin otbor/D.cpp)
+add_executable(otbor_E.bin otbor/E.cpp)
+add_executable(otbor_F.bin otbor/F.cpp)
