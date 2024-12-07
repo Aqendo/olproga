@@ -23,15 +23,20 @@ struct Segtree {
         int m = (lx + rx) >> 1;
         push(x, lx, m, rx);
         if (lx == rx) {
+            push(x, lx, m, rx);
             tree[x].mx = v;
             tree[x].mn = v;
             tree[x].v = v;
             lazy[x] = 0;
+            push(x, lx, m, rx);
             return;
         }
+        push(x, lx, m, rx);
         if (i <= m) {
+            push(x, lx, m, rx);
             update(x + 1, lx, m, i, v);
         } else {
+            push(x, lx, m, rx);
             update(x + 2 * (m - lx + 1), m + 1, rx, i, v);
         }
         tree[x] = combine(tree[x + 1], tree[x + 2 * (m - lx + 1)]);
@@ -42,10 +47,14 @@ struct Segtree {
         int m = (lx + rx) >> 1;
         push(x, lx, m, rx);
         if (l == lx && r == rx) {
+            push(x, lx, m, rx);
             return tree[x];
         }
+        push(x, lx, m, rx);
         Node s1 = sum(x + 1, lx, m, l, min(m, r));
+        push(x, lx, m, rx);
         Node s2 = sum(x + 2 * (m - lx + 1), m + 1, rx, max(m + 1, l), r);
+        push(x, lx, m, rx);
         return combine(s1, s2);
     }
     void massop(int x, int lx, int rx, int l, int r, int mod) {
@@ -53,18 +62,25 @@ struct Segtree {
         int m = (lx + rx) >> 1;
         push(x, lx, m, rx);
         if (tree[x].mx < mod) {
+            push(x, lx, m, rx);
             return;
         }
-        if (l == lx && r == rx && tree[x].mx / mod == tree[x].mn / mod) {
+        push(x, lx, m, rx);
+        if (l == lx && r == rx && tree[x].mx == tree[x].mn) {
+            push(x, lx, m, rx);
             int todel = (tree[x].mx / mod) * mod;
             tree[x].v -= todel * (rx - lx + 1);
             tree[x].mx -= todel;
             tree[x].mn -= todel;
             lazy[x] -= todel;
+            push(x, lx, m, rx);
             return;
         }
+        push(x, lx, m, rx);
         massop(x + 1, lx, m, l, min(m, r), mod);
+        push(x, lx, m, rx);
         massop(x + 2 * (m - lx + 1), m + 1, rx, max(m + 1, l), r, mod);
+        push(x, lx, m, rx);
         tree[x] = combine(tree[x + 1], tree[x + 2 * (m - lx + 1)]);
     }
     void push(int x, int lx, int m, int rx) {
