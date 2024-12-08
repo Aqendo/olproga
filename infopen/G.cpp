@@ -21,6 +21,7 @@ int main() {
     while (!pq.empty()) {
         auto [remain, dist_now, v] = pq.top();
         pq.pop();
+        if (remain <= 0 || dist[v][dist_now] > remain) continue;
         for (int u : g[v]) {
             if (dist[u][1 - dist_now] < remain - 1) {
                 dist[u][1 - dist_now] = remain - 1;

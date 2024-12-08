@@ -27,10 +27,12 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=2
+current_page=4
 FILE_NAME_0=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fser%2FЗагрузки%2F17%286%29.txt;0;4
 FILE_NAME_1=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fser%2FЗагрузки%2F17_2024%281%29.txt;0;4
 FILE_NAME_2=0;None;0;EUTF-8;1;1;0;%2Fhome%2Fser%2FЗагрузки%2F17%287%29.txt;0;4
+FILE_NAME_3=4;None;0;EUTF-8;1;1;0;%2Fhome%2Fser%2FЗагрузки%2FTelegram%20Desktop%2F107_27_B.txt;0;4
+FILE_NAME_4=0;C++;0;EUTF-8;1;1;0;%2Fhome%2Fser%2FЗагрузки%2FTelegram%20Desktop%2Fsolution%283%29.cpp;0;4
 
 [VTE]
 last_dir=/home/ser
