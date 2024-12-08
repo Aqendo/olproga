@@ -33,7 +33,10 @@ int main() {
     if (dist[n][0] >= 0) {
         dist_now = 0;
     }
-    cout << dist_now << ' ';
+    cout << dist[n][0] << endl;
+    cout << dist[n][1] << endl;
+    cout << dist_now << endl;
+
     int now = n;
     vector<int> path = {n};
     while (now != 1 || dist_now != 0) {

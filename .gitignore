@@ -7,3 +7,4 @@ build/**
 build/*
 input.txt
 output.txt
+.vscode/tasks.json
