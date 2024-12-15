@@ -22,13 +22,14 @@ void get_head(int x) {
     eulers.push_back(x);
     for (int u : g[x]) {
         head[u] = u == g[x][0] ? head[x] : u;
+        // cout << "head[" << u << "]: " << head[u] << endl;
         get_head(u);
     }
     tout[x] = timer;
 }
 vector<int> a;
 struct Segtree {
-    vector<unordered_map<int, int[2]>> tree;
+    vector<map<int, int[2]>> tree;
     vector<int> *arr_;
     void init(vector<int> &arr) {
         tree.assign(2 * arr.size() - 1, {});
@@ -73,7 +74,7 @@ struct Segtree {
             answer[2] = lx - a[(*arr_)[lx]];
             tree[x][answer[0]][0] = 0;
             tree[x][answer[2]][1] = 0;
-            a[(*arr_)[lx]] = v;
+            (*arr_)[lx] = v;
             answer[1] = lx + a[(*arr_)[lx]];
             answer[3] = lx - a[(*arr_)[lx]];
             tree[x][answer[1]][0] = 1;
@@ -104,10 +105,16 @@ Segtree st;
 int get_up_count(int aa, int bb) {
     int offset = 0;
     while (!is_ancestor(head[aa], bb)) {
+        // for (int i = tin[aa]; i >= tin[head[aa]]; --i) {
+        //     cerr << eulers[i] << ' ';
+        // }
         offset += tin[aa] - tin[head[aa]] + 1;
         aa = p[head[aa]];
     }
     while (!is_ancestor(head[bb], aa)) {
+        // for (int i = tin[aa]; i >= tin[head[aa]]; --i) {
+        //     cerr << eulers[i] << ' ';
+        // }
         offset += tin[bb] - tin[head[bb]] + 1;
         bb = p[head[bb]];
     }
@@ -117,6 +124,9 @@ int get_up_count(int aa, int bb) {
 void get_up_left(int &aa, int &bb, int &ans, int &offset) {
     offset = 0;
     while (!is_ancestor(head[aa], bb)) {
+        // for (int i = tin[aa]; i >= tin[head[aa]]; --i) {
+        //     cout << eulers[i] << ' ' << i << ' ' << a[eulers[i]] << ' ' << i + a[eulers[i]] << endl;
+        // }
         ans += st.get0(0, 0, eulers.size() - 1, tin[head[aa]], tin[aa], tin[aa] + offset);
         offset += tin[aa] - tin[head[aa]] + 1;
         aa = p[head[aa]];
@@ -124,6 +134,9 @@ void get_up_left(int &aa, int &bb, int &ans, int &offset) {
 }
 void get_up_right(int &aa, int &bb, int &ans, int &offset) {
     while (!is_ancestor(head[aa], bb)) {
+        // for (int i = tin[aa]; i >= tin[head[aa]]; --i) {
+        //     cout << eulers[i] << ' ' << i << ' ' << a[eulers[i]] << ' ' << i - a[eulers[i]] << endl;
+        // }
         ans += st.get1(0, 0, eulers.size() - 1, tin[head[aa]], tin[aa], tin[aa] - offset);
         offset -= tin[aa] - tin[head[aa]] + 1;
         aa = p[head[aa]];
@@ -152,6 +165,14 @@ vector<int> solve(int n, int q, vector<int> a_, vector<int> p_, vector<int> qt, 
     head[root] = root;
     get_head(root);
     st.init(eulers);
+    // for (int i = 0; i < eulers.size(); ++i) {
+    //     cout << eulers[i] << ' ';
+    // }
+    // cout << endl;
+    // for (int i = 0; i < eulers.size(); ++i) {
+    //     cout << i + a[eulers[i]] << ' ';
+    // }
+    // cout << endl;
     vector<int> answer_;
     for (int i = 0; i < q; ++i) {
         int move = qt[i];
@@ -161,16 +182,33 @@ vector<int> solve(int n, int q, vector<int> a_, vector<int> p_, vector<int> qt, 
         } else {
             int u = qx[i], v = qy[i];
             int len = get_up_count(u, v);
+            // cout << "LEN: " << len << endl;
             int ans = 0;
             int offset = 0;
             get_up_left(u, v, ans, offset);
+            // cout << "ans1: " << ans << endl;
             int offset2 = len - 1;
             get_up_right(v, u, ans, offset2);
+            // cout << "ans2: " << ans << endl;
             if (tin[u] < tin[v]) {
+                // for (int j = tin[u]; j <= tin[v]; ++j) {
+                //     cout << eulers[j] << ' ' << j << ' ' << a[eulers[j]] << ' ' << j - a[eulers[j]] << endl;
+                // }
+                // cout << tin[u] - offset << endl;
                 ans += st.get1(0, 0, eulers.size() - 1, tin[u], tin[v], tin[u] - offset);
             } else {
+                // for (int j = tin[v]; j <= tin[u]; ++j) {
+                //     cout << eulers[j] << ' ' << j << ' ' << a[eulers[j]] << ' ' << j + a[eulers[j]] << endl;
+                // }
+                // cout << tin[u] + offset << endl;
                 ans += st.get0(0, 0, eulers.size() - 1, tin[v], tin[u], tin[u] + offset);
             }
+
+            // cout << "ans3:  " << ans << endl;
+            // for (int ii = min(tin[u], tin[v]); ii <= max(tin[u], tin[v]); ++ii) {
+            //     cerr << eulers[ii] << ' ';
+            // }
+            // cerr << "\nEND\n";
             answer_.push_back(ans);
         }
     }
