@@ -42,49 +42,75 @@ void get_head(int x) {
     tout[x] = timer;
 }
 vector<int> a;
-struct Fenw {
-    vector<hash_big<int, array<int, 2>>> fenw;
-    void init() {
-        fenw.assign(eulers.size(), {});
-        for (int i = 0; i < eulers.size(); ++i) {
-            for (int index = i; index >= (i & (i + 1)); --index) {
-                fenw[i][index + a[eulers[index]]][0]++;
-                fenw[i][index - a[eulers[index]]][1]++;
-            }
+struct Segtree {
+    vector<hash_big<int, array<int, 2>>> tree;
+    vector<int> *arr_;
+    void init(vector<int> &arr) {
+        tree.assign(2 * arr.size() - 1, {});
+        build(arr, 0, 0, arr.size() - 1);
+        arr_ = &arr;
+    }
+    void build(vector<int> &arr, int x, int lx, int rx) {
+        if (lx == rx) {
+            tree[x][lx + a[arr[lx]]][0] = 1;
+            tree[x][lx - a[arr[lx]]][1] = 1;
+            return;
+        }
+        int m = (lx + rx) >> 1;
+        build(arr, x + 1, lx, m);
+        build(arr, x + 2 * (m - lx + 1), m + 1, rx);
+        tree[x].resize(tree[x + 1].size() + tree[x + 2 * (m - lx + 1)].size());
+        for (const auto &[u, v] : tree[x + 1]) {
+            tree[x][u][0] += v[0];
+            tree[x][u][1] += v[1];
+        }
+        for (const auto &[u, v] : tree[x + 2 * (m - lx + 1)]) {
+            tree[x][u][0] += v[0];
+            tree[x][u][1] += v[1];
         }
     }
-    int get0_(int r, int v) {
-        int answer = 0;
-        for (; r >= 0; r = (r & (r + 1)) - 1) {
-            answer += fenw[r].find(v) != fenw[r].end() ? fenw[r][v][0] : 0;
+    int get0(int x, int lx, int rx, int l, int r, int v) {
+        if (l > r) return 0;
+        if (l == lx && r == rx) return tree[x].find(v) != tree[x].end() ? tree[x][v][0] : 0;
+        int m = (lx + rx) >> 1;
+        int s1 = l <= min(m, r) ? get0(x + 1, lx, m, l, min(m, r), v) : 0;
+        int s2 = max(m + 1, l) <= r ? get0(x + 2 * (m - lx + 1), m + 1, rx, max(m + 1, l), r, v) : 0;
+        return s1 + s2;
+    }
+    int get1(int x, int lx, int rx, int l, int r, int v) {
+        if (l > r) return 0;
+        if (l == lx && r == rx) return tree[x].find(v) != tree[x].end() ? tree[x][v][1] : 0;
+        int m = (lx + rx) >> 1;
+        int s1 = l <= min(m, r) ? get1(x + 1, lx, m, l, min(m, r), v) : 0;
+        int s2 = max(m + 1, l) <= r ? get1(x + 2 * (m - lx + 1), m + 1, rx, max(m + 1, l), r, v) : 0;
+        return s1 + s2;
+    }
+    array<int, 4> change(int x, int lx, int rx, int i, int v) {
+        if (lx == rx) {
+            array<int, 4> answer;
+            answer[0] = lx + a[(*arr_)[lx]];
+            answer[2] = lx - a[(*arr_)[lx]];
+            tree[x][answer[0]][0] = 0;
+            tree[x][answer[2]][1] = 0;
+            a[(*arr_)[lx]] = v;
+            answer[1] = lx + a[(*arr_)[lx]];
+            answer[3] = lx - a[(*arr_)[lx]];
+            tree[x][answer[1]][0] = 1;
+            tree[x][answer[3]][1] = 1;
+            return answer;
         }
+        int m = (lx + rx) >> 1;
+        array<int, 4> answer;
+        if (i <= m) {
+            answer = change(x + 1, lx, m, i, v);
+        } else {
+            answer = change(x + 2 * (m - lx + 1), m + 1, rx, i, v);
+        }
+        tree[x][answer[0]][0]--;
+        tree[x][answer[2]][1]--;
+        tree[x][answer[1]][0]++;
+        tree[x][answer[3]][1]++;
         return answer;
-    }
-    int get0(int l, int r, int v) {
-        return get0_(r, v) - (l != 0 ? get0_(l - 1, v) : 0);
-    }
-    int get1_(int r, int v) {
-        int answer = 0;
-        for (; r >= 0; r = (r & (r + 1)) - 1) {
-            answer += fenw[r].find(v) != fenw[r].end() ? fenw[r][v][1] : 0;
-        }
-        return answer;
-    }
-    int get1(int l, int r, int v) {
-        return get1_(r, v) - (l != 0 ? get1_(l - 1, v) : 0);
-    }
-    void change(int i, int v) {
-        int from0 = i + a[eulers[i]];
-        int from1 = i - a[eulers[i]];
-        int to0 = i + v;
-        int to1 = i - v;
-        a[eulers[i]] = v;
-        for (; i < eulers.size(); i = i | (i + 1)) {
-            fenw[i][from0][0]--;
-            fenw[i][from1][1]--;
-            fenw[i][to0][0]++;
-            fenw[i][to1][1]++;
-        }
     }
 };
 
@@ -92,7 +118,7 @@ bool is_ancestor(int aa, int bb) {
     return tin[aa] <= tin[bb] && tin[bb] < tout[aa];
 }
 
-Fenw st;
+Segtree st;
 
 int get_up_count(int aa, int bb) {
     int offset = 0;
@@ -110,14 +136,14 @@ int get_up_count(int aa, int bb) {
 void get_up_left(int &aa, int &bb, int &ans, int &offset) {
     offset = 0;
     while (!is_ancestor(head[aa], bb)) {
-        ans += st.get0(tin[head[aa]], tin[aa], tin[aa] + offset);
+        ans += st.get0(0, 0, eulers.size() - 1, tin[head[aa]], tin[aa], tin[aa] + offset);
         offset += tin[aa] - tin[head[aa]] + 1;
         aa = p[head[aa]];
     }
 }
 void get_up_right(int &aa, int &bb, int &ans, int &offset) {
     while (!is_ancestor(head[aa], bb)) {
-        ans += st.get1(tin[head[aa]], tin[aa], tin[aa] - offset);
+        ans += st.get1(0, 0, eulers.size() - 1, tin[head[aa]], tin[aa], tin[aa] - offset);
         offset -= tin[aa] - tin[head[aa]] + 1;
         aa = p[head[aa]];
     }
@@ -144,13 +170,13 @@ vector<int> solve(int n, int q, vector<int> a_, vector<int> p_, vector<int> qt, 
     get_size(root);
     head[root] = root;
     get_head(root);
-    st.init();
+    st.init(eulers);
     vector<int> answer_;
     for (int i = 0; i < q; ++i) {
         int move = qt[i];
         if (move == 1) {
             int s = qx[i], x = qy[i];
-            st.change(tin[s], x);
+            st.change(0, 0, eulers.size() - 1, tin[s], x);
         } else {
             int u = qx[i], v = qy[i];
             int len = get_up_count(u, v);
@@ -160,9 +186,9 @@ vector<int> solve(int n, int q, vector<int> a_, vector<int> p_, vector<int> qt, 
             int offset2 = len - 1;
             get_up_right(v, u, ans, offset2);
             if (tin[u] < tin[v]) {
-                ans += st.get1(tin[u], tin[v], tin[u] - offset);
+                ans += st.get1(0, 0, eulers.size() - 1, tin[u], tin[v], tin[u] - offset);
             } else {
-                ans += st.get0(tin[v], tin[u], tin[u] + offset);
+                ans += st.get0(0, 0, eulers.size() - 1, tin[v], tin[u], tin[u] + offset);
             }
             answer_.push_back(ans);
         }

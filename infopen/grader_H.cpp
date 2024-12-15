@@ -1,6 +1,6 @@
 #include "H.cpp"
-
 int main() {
+    cin.tie(nullptr)->sync_with_stdio(false);
     int n, q;
     std::cin >> n >> q;
     std::vector<int> a(n);
