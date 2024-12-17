@@ -47,6 +47,7 @@ struct Fenw {
     void init() {
         fenw.assign(eulers.size(), {});
         for (int i = 0; i < eulers.size(); ++i) {
+            fenw[i].resize(2 * (i - (i & (i + 1)) + 1));
             for (int index = i; index >= (i & (i + 1)); --index) {
                 fenw[i][index + a[eulers[index]]][0]++;
                 fenw[i][index - a[eulers[index]]][1]++;

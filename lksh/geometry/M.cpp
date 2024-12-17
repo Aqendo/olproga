@@ -1,14 +1,6 @@
-#include <climits>
-#include <cmath>
 #include "bits/stdc++.h"
 
 using namespace std;
-
-#ifdef SEREGA
-#include "../debug.h"
-auto freopen_input_result_ = freopen("../input.txt", "r", stdin);
-// auto freopen_output_result_ = freopen("output.txt", "r", stdout);
-#endif
 
 // clang не считает функцию acosl constexpr
 const long double PI = acosl(-1);
@@ -90,8 +82,6 @@ long double from_point_to_ray(Point& A, Point& C, Point& D) {
     // 3. Расстояние от точки A до луча CD.
     Point CD = D - C;
     Point C__A = A - C;
-    Point DC = C - D;
-    Point A__D = A - D;
     bool right_poluploskost = CD.scalmul(C__A) >= 0;
     if (right_poluploskost) {
         return abs(CD.vecmul(C__A) / CD.len());
@@ -103,8 +93,6 @@ long double from_point_to_ray(Point& A, Point& C, Point& D) {
 long double from_point_to_line(Point& A, Point& C, Point& D) {
     Point CD = D - C;
     Point C__A = A - C;
-    Point DC = C - D;
-    Point A__D = A - D;
     return abs(CD.vecmul(C__A) / CD.len());
 }
 
@@ -119,7 +107,7 @@ bool is_intersect(int x1, int x2, int x3, int x4) {
         swap(x1, x3);
         swap(x2, x4);
     }
-    return x1 <= x3 && x3 <= x2 || x1 <= x4 && x4 <= x2;
+    return (x1 <= x3 && x3 <= x2) || (x1 <= x4 && x4 <= x2);
 }
 
 long long sign(long long a) {
