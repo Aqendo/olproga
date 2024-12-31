@@ -35,22 +35,16 @@ bool left_turn(const Dot &B, const Dot &O, const Dot &A) {
 }
 int f(int t) {
     vector<Dot> nd(n);
-    vector<vector<Dot>> bycol(2);
     Dot point = {dots[0].x + dots[0].dx * t, dots[0].y + dots[0].dy * t};
     for (int i = 0; i < n; ++i) {
         nd[i] = dots[i];
         nd[i].x += nd[i].dx * t;
         nd[i].y += nd[i].dy * t;
-        if (nd[i].c == dots[0].c) {
-            bycol[0].push_back(nd[i]);
-        } else {
-            bycol[1].push_back(nd[i]);
-        }
         if (nd[i].x < point.x || (nd[i].x == point.x && nd[i].y < point.y)) {
             point = nd[i];
         }
     }
-    if (n <= 10000) {
+    if (remain != 0 || n <= 10000) {
         int answer = 0;
         for (int i = 0; i < n; ++i) {
             for (int j = i + 1; j < n; ++j) {
@@ -96,20 +90,12 @@ int f(int t) {
             continue;
         }
         visited[l1] = true;
-        if (convex[l1].c != convex[l2].c) {
-            answer = max(answer, dist(convex[l1], convex[l2]));
-        }
-        if (convex[getnext(l1)].c != convex[l2].c) {
-            answer = max(answer, dist(convex[getnext(l1)], convex[l2]));
-        }
+        answer = max(answer, dist(convex[l1], convex[l2]));
+        answer = max(answer, dist(convex[getnext(l1)], convex[l2]));
         if (from.vecmul(convex[getnext(l2)] - convex[l2]) == 0) {
             visited[l2] = true;
-            if (convex[l1].c != convex[getprev(l2)].c) {
-                answer = max(answer, dist(convex[l1], convex[getprev(l2)]));
-            }
-            if (convex[getnext(l1)].c != convex[getnext(l2)].c) {
-                answer = max(answer, dist(convex[getnext(l1)], convex[getnext(l2)]));
-            }
+            answer = max(answer, dist(convex[l1], convex[getprev(l2)]));
+            answer = max(answer, dist(convex[getnext(l1)], convex[getnext(l2)]));
         }
         l1++;
     }
