@@ -5,7 +5,7 @@ vector<vector<pair<int, bool>>> g;
 int timer = 0;
 vector<array<int, 2>> dp;
 vector<int> used;
-void dfs(int x, int parent = -1) {
+void dfs_stupid(int x, int parent = -1) {
     used[x] = timer;
     dp[x][1] = 1;
     dp[x][0] = 0;
@@ -13,7 +13,7 @@ void dfs(int x, int parent = -1) {
     for (auto [u, is_active] : g[x]) {
         if (!is_active) continue;
         if (used[u] != timer) {
-            dfs(u, x);
+            dfs_stupid(u, x);
             dp[x][1] += dp[u][0];
         }
     }
@@ -25,8 +25,45 @@ void dfs(int x, int parent = -1) {
         }
     }
 }
+int n;
+vector<int> is_blocked;
+void dfs_first_bin(int x, int parent = -1) {
+    dp[x][1] = 1;
+    dp[x][0] = 0;
+    int most_weight = -1;
+    for (int u : {x * 2, x * 2 + 1}) {
+        if (u <= n) {
+            dfs_first_bin(u, x);
+            dp[x][1] += dp[u][0];
+        }
+    }
+    dp[x][0] = dp[x][1] - 1;
+    for (int u : {x * 2, x * 2 + 1}) {
+        if (u <= n) {
+            dp[x][0] = max(dp[x][0], dp[x][1] - dp[u][0] + dp[u][1] - 1);
+        }
+    }
+}
+void dfs_change(int x) {
+    dp[x][1] = 1;
+    dp[x][0] = 0;
+    int most_weight = -1;
+    for (int u : {x * 2, x * 2 + 1}) {
+        if (u <= n && !is_blocked[u]) {
+            dp[x][1] += dp[u][0];
+        }
+    }
+    dp[x][0] = dp[x][1] - 1;
+    for (int u : {x * 2, x * 2 + 1}) {
+        if (u <= n && !is_blocked[u]) {
+            dp[x][0] = max(dp[x][0], dp[x][1] - dp[u][0] + dp[u][1] - 1);
+        }
+    }
+    if (!is_blocked[x] && x != 1) {
+        dfs_change(x / 2);
+    }
+}
 void stupid() {
-    int n;
     cin >> n;
     vector<array<int, 4>> edges(n);
     g.assign(n + 1, {});
@@ -55,7 +92,7 @@ void stupid() {
             int from;
             cin >> from;
             timer++;
-            dfs(from);
+            dfs_stupid(from);
             // for (int i = 1; i <= n; ++i) {
             //     cout << i << ": " << dp[i][0] << ' ' << dp[i][1] << endl;
             // }
@@ -64,8 +101,40 @@ void stupid() {
     }
 }
 
+void binary() {
+    cin >> n;
+    vector<array<int, 4>> edges(n);
+    g.assign(n + 1, {});
+    for (int i = 1; i <= n - 1; ++i) {
+        int a, b;
+        cin >> a >> b;
+    }
+    int q;
+    cin >> q;
+    used.resize(n + 1);
+    dp.resize(n + 1);
+    is_blocked.resize(n + 1);
+    dfs_first_bin(1);
+    for (int i = 0; i < q; ++i) {
+        int move;
+        cin >> move;
+        if (move == 1) {
+            int road;
+            cin >> road;
+            is_blocked[road + 1] ^= 1;
+            dfs_change((road + 1) >> 1);
+        } else {
+            int from;
+            cin >> from;
+            while (!is_blocked[from] && from != 1) {
+                from /= 2;
+            }
+            cout << dp[from][0] << '\n';
+        }
+    }
+}
+
 void bamboo() {
-    int n;
     cin >> n;
     for (int i = 0; i < n - 1; ++i) {
         int a, b;
@@ -103,5 +172,7 @@ signed main() {
         bamboo();
     } else if (group == 0 || group == 1 || group == 3) {
         stupid();
+    } else if (group == 4) {
+        binary();
     }
 }
