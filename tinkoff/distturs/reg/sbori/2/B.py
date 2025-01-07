@@ -1,6 +1,7 @@
 n, m, k = map(int, input().split())
 A, B, C = map(int, input().split())
 T = int(input())
+oldm = m
 superfast = [0] * (m + 1) 
 for i in range(m):
     superfast[i] = int(input()) - 1
@@ -24,7 +25,7 @@ for i in range(1, m + 1):
     timer = 0
     while from_dop <= to - 1:
         timer += 1
-        if timer - 2 > k - m: break
+        if timer - 2 > k - oldm: break
         if fro * B + (from_dop - fro) * C > T:
             break
         if fro * B + (from_dop - fro) * C + (to_dop - from_dop) * A <= T:
@@ -37,6 +38,6 @@ if len(remain) == 0:
     print(answer)
     exit(0)
 remain.sort(reverse=True)
-for i in range(0, min(len(remain), k - m)):
+for i in range(0, min(len(remain), k - oldm)):
     answer += remain[i]
 print(answer)
