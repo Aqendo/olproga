@@ -31,47 +31,54 @@ pair<int, int> get(int l, int r) {
 
 void solve() {
     cin >> n >> q;
-    for (int i = 0; i < n; ++i) {
+    for (int i = 1; i <= n; ++i) {
         cin >> a[i];
     }
+    a[0] = INF;
+    a[n + 1] = INF;
     build();
     for (int i = 0; i < q; ++i) {
         int p, k, answer = 0;
         cin >> p >> k;
-        p--;
         if (k == 1) {
             cout << 1 << '\n';
             continue;
         }
-        if (p + k - 1 < n) {
-            auto [mx, index_mx] = get(p + 1, p + k - 1);
-            auto [smx, index_smx] = max(get(p, index_mx - 1), get(index_mx + 1, p + k - 1));
-            cout << p << ' ' << k << ", 1: " << mx << ' ' << index_mx << ' ' << smx << ' ' << index_smx << endl;
-            if (smx == a[i] && a[i] < mx && (p + k >= n || a[p + k] > mx)) {
+        if (p + k - 1 <= n) {
+            auto [mx, index_mx] = get(p, p + k - 1);
+            auto [smx1, index_smx1] = get(p, index_mx - 1);
+            auto [smx2, index_smx2] = get(index_mx + 1, p + k - 1);
+            // cout << p << ' ' << k << ", 1: " << mx << ' ' << index_mx << ' ' << smx << ' ' << index_smx << endl;
+            if (smx1 > smx2 && a[p + k] > a[p]) {
+                // cout << "+=1\n";
                 answer += 1;
             }
-            if (p + k >= n || a[p + k] > a[p]) {
+            if (p + k >= n || a[p + k] > mx) {
+                // cout << "+= " << p + k - 1 - index_mx << endl;
                 answer += p + k - 1 - index_mx;
             }
         }
-        if (p - k + 1 >= 0) {
-            auto [mx, index_mx] = get(p - k + 1, p - 1);
-            auto [smx, index_smx] = max(get(p - k + 1, index_mx - 1), get(index_mx + 1, p - 1));
-            cout << p << ' ' << k << ", 2: " << mx << ' ' << index_mx << ' ' << smx << ' ' << index_smx << endl;
-            if (smx == a[i] && a[i] < mx && (p - k < 0 || a[p - k] > mx)) {
+        if (p - k >= 1) {
+            auto [mx, index_mx] = get(p - k + 1, p);
+            auto [smx1, index_smx1] = get(p - k + 1, index_mx - 1);
+            auto [smx2, index_smx2] = get(index_mx + 1, p);
+            // cout << p << ' ' << k << ", 2: " << mx << ' ' << index_mx << ' ' << smx << ' ' << index_smx << endl;
+            if (smx2 > smx1 && (p - k < 0 || a[p - k] > a[p])) {
+                // cout << "+=1\n";
                 answer += 1;
             }
-            if (p - k < 0 || a[p - k] > a[p]) {
-                answer += index_mx - (p - k);
+            if (p - k < 0 || a[p - k] > mx) {
+                answer += index_mx - 1 - (p - k);
             }
         }
+        // cout << "ANSWER: ";
         cout << answer << '\n';
     }
 }
 
 signed main() {
     plg[1] = 0;
-    for (int i = 0; i < N; ++i) {
+    for (int i = 2; i < N; ++i) {
         plg[i] = plg[i >> 1] + 1;
     }
     cin.tie(nullptr)->sync_with_stdio(false);
