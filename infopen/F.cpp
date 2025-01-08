@@ -100,24 +100,25 @@ DSU dsu;
 struct Hash {
     int size;
     int xr;
+    int sm;
     uint64_t hs;
     const bool operator==(const Hash& l) const {
-        return size == l.size && xr == l.xr && hs == l.hs;
+        return size == l.size && xr == l.xr && hs == l.hs && sm == l.sm;
     }
 };
-Hash dp[6001][6001];
+Hash dp[6001];
 const int P = 2351;
-void get(string& s, int starting_from = 0) {
+void get(string& s) {
     int cur = root;
-    auto& d = dp[starting_from];
-    for (int i = starting_from; i < (int)s.size(); ++i) {
-        if (i != starting_from) {
-            d[i - starting_from] = d[i - starting_from - 1];
+    for (int i = 0; i < (int)s.size(); ++i) {
+        if (i != 0) {
+            dp[i] = dp[i - 1];
         }
         int el = dsu.getp(s[i] - 'a' + 1);
-        d[i - starting_from].size++;
-        d[i - starting_from].xr ^= change[el];
-        d[i - starting_from].hs = d[i - starting_from].hs * P + change[el];
+        dp[i].size++;
+        dp[i].xr ^= change[el];
+        dp[i].sm += change[el];
+        dp[i].hs = dp[i].hs * P + change[el];
         // dp[i].push_back(s[i] - 'a' + 1);
         // cout << "in index: " << i << endl;
         cur = nodes[cur].go[s[i] - 'a'];
@@ -125,21 +126,30 @@ void get(string& s, int starting_from = 0) {
         while (t) {
             t = nodes[t].super;
             if (!t) break;
+            int mx = 1;
             for (auto [index, sz] : nodes[t].index_and_size) {
-                if (i - sz >= starting_from) {
-                    if (d[i - starting_from].size > d[i - starting_from - sz].size + 1) {
-                        d[i - starting_from] = d[i - starting_from - sz];
+                // cout << i << ' ' << index << ' ' << sz << endl;
+                if (i - sz >= 0) {
+                    if (sz > mx) {
+                        dp[i] = dp[i - sz];
                         el = dsu.getp(index);
-                        d[i - starting_from].size++;
-                        d[i - starting_from].xr ^= change[el];
-                        d[i - starting_from].hs = d[i - starting_from].hs * P + change[el];
+                        dp[i].size++;
+                        dp[i].xr ^= change[el];
+                        dp[i].sm += change[el];
+                        dp[i].hs = dp[i].hs * P + change[el];
+                        mx = max(mx, sz);
                         // dp[i].push_back(index);
                     }
                 } else {
-                    d[i - starting_from] = {
-                        .size = 1,
-                        .xr = change[dsu.getp(index)],
-                        .hs = (uint64_t)change[dsu.getp(index)]};
+                    if (sz > mx) {
+                        mx = max(mx, sz);
+                        dp[i] = {
+                            .size = 1,
+                            .xr = change[dsu.getp(index)],
+                            .sm = change[dsu.getp(index)],
+                            .hs = (uint64_t)change[dsu.getp(index)]};
+                    }
+
                     // dp[i] = {index};
                 }
             }
@@ -153,6 +163,7 @@ void solve() {
     auto uid = uniform_int_distribution<int>(10000, (int)1e9);
     string t;
     cin >> t;
+    reverse(t.begin(), t.end());
     int n, k;
     cin >> n >> k;
     sounds.assign(27, {});
@@ -162,6 +173,7 @@ void solve() {
     for (int i = 0; i < n; ++i) {
         string snd;
         cin >> snd;
+        reverse(snd.begin(), snd.end());
         sounds.push_back(snd);
         add_string(snd, sounds.size() - 1);
     }
@@ -178,16 +190,24 @@ void solve() {
             change[ii] = uid(rng);
         }
     }
-    for (int i = 0; i < (int)t.size(); ++i) {
-        get(t, i);
-    }
+    get(t);
+    // for (int from = 0; from < t.size(); ++from) {
+    //     for (int from2 = 0; from2 < t.size(); ++from2) {
+    //         cout << from << ' ' << from2 << ' ';
+    //         if (dp[0][(int)t.size() - 1 - from] == dp[0][(int)t.size() - 1 - from2]) {
+    //             cout << "Yes\n";
+    //         } else {
+    //             cout << "No\n";
+    //         }
+    //     }
+    // }
     int q;
     cin >> q;
     for (int i = 0; i < q; ++i) {
         int a, b, c, d;
         cin >> a >> b >> c >> d;
         a--, b--, c--, d--;
-        if (dp[a][b - a] == dp[c][d - c]) {
+        if (dp[(int)t.size() - 1 - a] == dp[(int)t.size() - 1 - c]) {
             cout << "Yes\n";
         } else {
             cout << "No\n";
